@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+typedef struct {
+    float largura;
+    float altura;
+}Retangulo;
+
+float areaRetangulo(Retangulo retangulo){
+    return (retangulo.altura * retangulo.largura);
+}
+
+int main(){
+
+    Retangulo r;
+
+    r.largura = 10;
+    r.altura = 5;
+
+    float resultado = areaRetangulo(r);
+
+    printf("resultado: %.2f\n", resultado);
+}

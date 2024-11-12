@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+    int num1;
+    int num2;
+    int num3;
+
+    printf("Digite 3 numeros para saber o maior entre eles:\n");
+    
+    printf("Primeiro numero:\n");
+    scanf("%d", &num1);
+    printf("segundo numero:\n");
+    scanf("%d", &num2);
+    printf("terceiro numero:\n");
+    scanf("%d", &num3);
+    
+    if(num1 > num2 && num1 > num3){ // se numero 1 for maior que o numero 2 E numero 1 maior que o numero 3
+        printf("O numero %d foi o maior de todos\n", num1);
+    }else if(num2 > num1 && num2 > num3){
+        printf("O numero %d e o maior de todos\n", num2);
+    }else if(num3 > num2 && num3 > num1){
+        printf("O numero %d e o maior de todos\n", num3);
+    }
+}

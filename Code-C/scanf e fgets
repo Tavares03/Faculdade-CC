@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h> //blibioteca para usar o vetor de string
+#define N 50 //define um valor constante para N, nesse casa 30
+
+int main(){
+
+    //char s[40];  //vetor de string com 40 posiÃ§Ãµes
+    
+    //SCANF CONVENCIONAL
+    // printf("Digite qualquer palavra (ultilizando o scaf convencional:)\n");
+    // scanf("%s", s);
+    // fflush(stdin);  //usado para limpar a memmoria na proxima execuÃ§Ã£o
+    // printf("Nao aprimoprado - foi digitado: %s\n", s);
+
+    //SCANF APROMORADO
+    // printf("Digite qualquer numero (scanf aprimorado):\n");
+    // scanf("%39[^\n]s", s); //"%(tamanho do vetor - 1 [40-1 = 39])"
+    // fflush(stdin);
+    // printf("Aprimorado - foi digitado: %s\n", s);
+
+    //ultilizando o fgets, melhor e mais ultilizando que o scanf
+    
+    // char s[N];
+
+    // printf("Digite qualquer palavra (ultilizando o fgets):\n");
+    // fgets(s, N, stdin); //nome do vetor, tamanho do vetor, biblioteca
+    // fflush(stdin);
+
+    // printf("Resultado: fgets\n");
+    // printf(s);
+}

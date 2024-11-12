@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+
+    int v[4] = {1, 2, 3, 4};
+    int i;
+    float soma = 0;
+
+    for(i=0; i<4; i++){
+        soma += v[i];
+    }
+    printf("soma dos vetores: %.2f\n", soma);
+
+
+}

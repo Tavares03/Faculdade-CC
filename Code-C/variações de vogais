@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#define N 50
+int main(){
+
+    int i, n = 0;
+    char s[N];
+    int comprimento;
+
+    printf("Digite qualquer coisa para uma string:\n");
+    fgets(s, N, stdin);
+    fflush(stdin);
+
+    s[strcspn(s, "\n")] = '\0';
+
+    comprimento = strlen(s);
+
+    for(i=0; i<comprimento; i++){
+        if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'){
+            n++;
+        }
+    }
+    printf("A quantidade de vogais nessa palavra e: %d\n", n);
+
+}

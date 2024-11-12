@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+    int alunos, i = 1;
+    float notas, soma, media;
+
+    printf("Digite quantos alunos ha na sala:\n");
+    scanf("%d", &alunos);
+    
+    while(i <= alunos){ //i comeÃ§a em 1 e vai incrementando ate chegar na quantidade de alunos, aluno 1, 2, 3...
+        printf("Nota do aluno %d\n", i);
+        scanf("%f", &notas);
+        soma += notas;
+        i++; //incrementando de 1 em 1 ate atingir o limete da condiÃ§Ã£o do while
+    }
+    media = soma / alunos; //calculo da media aritimedica soma dividido pela quantidade de termos
+    printf("A soma das notas foi: %.2f\n", soma);
+    printf("A media da turma foi:%.2f\n", media);
+}

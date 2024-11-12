@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+typedef struct {
+    float x;
+    float y;
+}Ponto;
+
+float distaciaOrigem(Ponto ponto){
+    return sqrt(ponto.x * ponto.x + ponto.y * ponto.y); 
+}
+
+int main(){
+
+    Ponto p;
+
+    p.x = 2;
+    p.y = 2;
+
+    float resultado = distaciaOrigem(p);
+
+    printf("resultado: %.2f\n", resultado);
+}

@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    int num;
+
+    printf("Digite qualquer numero sendo positivo ou negativo:\n");
+    scanf("%d", &num);
+
+    if(num < 0){
+        printf("Seu numero e negativo");
+    }else {
+        printf("Seu numero e positivo");
+    }
+}

@@ -1,0 +1,84 @@
+#include <stdio.h>   
+#include <stdlib.h>  
+#include <time.h>    
+
+// Função para ajustar o heap
+void heapify(int arr[], int n, int i) {
+    int largest = i;      // Inicializa o maior como a raiz
+    int left = 2 * i + 1;  // Índice do filho esquerdo
+    int right = 2 * i + 2; // Índice do filho direito
+
+    // Se o filho esquerdo for maior que a raiz
+    if (left < n && arr[left] > arr[largest]) {
+        largest = left;  // Atualiza o maior
+    }
+
+    // Se o filho direito for maior que o maior até agora
+    if (right < n && arr[right] > arr[largest]) {
+        largest = right;  // Atualiza o maior
+    }
+
+    // Se o maior não for a raiz
+    if (largest != i) {
+        int temp = arr[i];  // Troca a raiz com o maior
+        arr[i] = arr[largest];
+        arr[largest] = temp;
+
+        // Recursivamente ajusta o heap afetado
+        heapify(arr, n, largest);
+    }
+}
+
+// Função que implementa o algoritmo Heap Sort
+void heapSort(int arr[], int n) {
+    // Constrói um heap (rearranja o vetor)
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    // Um por um, extrai elementos do heap
+    for (int i = n - 1; i > 0; i--) {
+        // Move a raiz atual para o final
+        int temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+
+        // Chama heapify na árvore reduzida
+        heapify(arr, i, 0);
+    }
+}
+
+int main() {
+    int arr[6];  // Declaração do vetor de 6 posições
+    srand(time(0));  // Inicializa o gerador de números aleatórios com base no tempo atual
+
+    // Preenchendo o vetor com valores aleatórios diferentes
+    for (int i = 0; i < 6; i++) {
+        arr[i] = rand() % 100;  // Atribui um número aleatório entre 0 e 99
+        // Verifica se o número gerado é único
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {  // Se não for único
+                i--;  // Decrementa i para tentar novamente
+                break;  // Sai do loop interno
+            }
+        }
+    }
+
+    // Exibe o vetor antes da ordenação
+    printf("Array antes da ordenação: ");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", arr[i]);  // Imprime cada elemento do vetor
+    }
+    printf("\n");  // Nova linha após a impressão
+
+    heapSort(arr, 6);  // Chama a função para ordenar o vetor
+
+    // Exibe o vetor após a ordenação
+    printf("Array depois da ordenação: ");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", arr[i]);  // Imprime cada elemento do vetor ordenado
+    }
+    printf("\n");  // Nova linha após a impressão
+
+    return 0;  // Finaliza o programa
+}

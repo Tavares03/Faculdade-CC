@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+
+    //v[50] = para poder alocar ate 50 numeros dentro do vetor
+    int v[50], i, n, QntNum; //i = variavel para indicar qual a posiÃ§Ã£o do vetor que estÃ¡ alocando o numero do usuario
+    float m, s;  //n = para mostrar o a ordem do numero que o usuario esta digitando
+    //QntNum = para o usuario colocar quantos numeros ele quiser para fazer a media
+    //m = media; s= soma;
+
+    printf("Digite quantos numeros inteiros voce quiser para fazer a media entre eles.\n");
+    scanf("%d", &QntNum);
+
+    for(i=0, n=1; i<=QntNum && n<=QntNum; i++, n++){
+        printf("Digite o %d numero:\n", n);
+        scanf("%d", &v[i]); // guardar os valores do usuario em cada posiÃ§Ã£o do vetor
+        s += v[i]; // somar cada numero do vetor para dentro de s para fazer a media
+    }
+   
+    m = s / QntNum; //fazer o calculo da media
+
+    printf("A soma dos numeros foi: %.2f.\n", s);
+    printf("Media dos numeros: %.2f.\n", m);
+
+
+}

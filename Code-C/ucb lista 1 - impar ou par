@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+    int num;
+    printf("Digite um numero para saber se e impar ou par\n");
+    scanf("%d", &num);
+
+    if(num % 2 == 0){ //quanquer numero par deve ter o resto da divisao 0, caso contrario esse numero Ã© impar
+        printf("Esse numero e par\n");
+    } else {
+        printf("Esse numero e impar\n");
+    }
+}

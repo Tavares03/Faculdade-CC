@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char nome[50];
+    int idade;
+
+    printf("Digite seu nome:\n");
+    fgets(nome, 50, stdin);
+    fflush(stdin);
+
+    printf("Digite sua idade:\n");
+    scanf("%d", &idade);
+
+    printf("Seu nome e: %s\n", nome);
+    printf("Sua idade e: %d\n", idade);
+}

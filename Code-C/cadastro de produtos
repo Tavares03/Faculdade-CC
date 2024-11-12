@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct Produto{
+    char nome[50];
+    float preco;
+    int q;
+
+}produtos;
+
+int main(){
+    int i;
+    int N;
+
+    printf("Digite quantos produtos voce quer cadrastrar\n");
+    scanf("%d", &N);
+
+    produtos produto[N];
+
+    for(i=0;i<N;i++){
+        printf("\nProduto %d\n", i + 1);
+
+        printf("Digite o nome:\n");
+        scanf(" %49[^\n]", produto[i].nome);
+
+        printf("Digite o preco:\n");
+        scanf("%f", &produto[i].preco);
+
+        printf("Digite a quantidade de produtos:\n");
+        scanf("%d", &produto[i].q);
+
+    }
+
+    for(i=0;i<N;i++){
+
+        printf("\nProduto %d\n", i + 1);
+        
+        printf("Nome: %s\n", produto[i].nome);
+        printf("Preco: %.3f\n", produto[i].preco);
+        printf("Quantidade de produtos: %d\n", produto[i].q);
+    }
+}

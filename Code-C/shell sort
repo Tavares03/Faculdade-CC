@@ -1,0 +1,57 @@
+#include <stdio.h>   
+#include <stdlib.h>  
+#include <time.h>    
+
+// Função que implementa o algoritmo Shell Sort
+void shellSort(int arr[], int n) {
+    // Inicializa o intervalo (gap) com metade do tamanho do vetor
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        // Loop para percorrer o vetor a partir do índice igual ao gap
+        for (int i = gap; i < n; i++) {
+            int temp = arr[i];  // Armazena o valor atual em uma variável temporária
+            int j;  // Variável para controle do loop
+
+            // Move os elementos arr[0..i-gap] que são maiores que temp
+            // para uma posição à frente de sua posição atual
+            for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+                arr[j] = arr[j - gap];  // Move o elemento para frente
+            }
+            arr[j] = temp;  // Insere o valor armazenado na posição correta
+        }
+    }
+}
+
+int main() {
+    int arr[6];  // Declaração do vetor de 6 posições
+    srand(time(0));  // Inicializa o gerador de números aleatórios com base no tempo atual
+
+    // Preenchendo o vetor com valores aleatórios diferentes
+    for (int i = 0; i < 6; i++) {
+        arr[i] = rand() % 100;  // Atribui um número aleatório entre 0 e 99
+        // Verifica se o número gerado é único
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {  // Se não for único
+                i--;  // Decrementa i para tentar novamente
+                break;  // Sai do loop interno
+            }
+        }
+    }
+
+    // Exibe o vetor antes da ordenação
+    printf("Array antes da ordenação: ");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", arr[i]);  // Imprime cada elemento do vetor
+    }
+    printf("\n");  // Nova linha após a impressão
+
+    shellSort(arr, 6);  // Chama a função para ordenar o vetor
+
+    // Exibe o vetor após a ordenação
+    printf("Array depois da ordenação: ");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", arr[i]);  // Imprime cada elemento do vetor ordenado
+    }
+    printf("\n");  // Nova linha após a impressão
+
+    return 0;  // Finaliza o programa
+}

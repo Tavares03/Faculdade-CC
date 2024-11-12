@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int ano;
+    
+    printf("Digite um ano qualquer para saber se ele e bixesto ou nao:\n");
+    scanf("%d", &ano);
+
+    if(ano % 4 == 0){ //o ano bixesto acontece em 4 em 4 anos, ou seja se dividir eles e o resto da divisao der 0 ele e bixesto
+        printf("Esse ano é bixesto");
+    }else {
+        printf("Esse ano não é bixesto");
+    }
+}

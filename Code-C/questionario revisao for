@@ -1,0 +1,144 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "portuguese");
+    
+    //Questão 1
+    int i, p;
+    
+    printf("\nQuestão 1: Qual é a sintaxe correta para declarar uma variável inteira em C?\n");
+    printf("1) int x;\n");
+    printf("2) var x;\n");
+    printf("3) integer x;\n");
+    printf("4) número x;\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 1; i++){
+        printf("Você acertou!!!!\n");
+    }
+
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 1){
+        printf("Você errou, a alternativa certa é a 1");
+    } 
+    
+    //Questão 2
+    printf("\nQuestão 2: Qual é a função usada para imprimir no console em C?\n");
+    printf("1) print();\n");
+    printf("2) console.log();\n");
+    printf("3) printtext();\n");
+    printf("4) printf();\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 4; i++){
+        printf("Você acertou!!!!\n");
+    }
+   
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 4){
+        printf("Você errou, a alternativa certa é a 4");
+    } 
+
+    //Questão 3
+    printf("\nQuestão 3: O que o operador '==' faz em C?\n");
+    printf("1) Atribui um valor a uma variável.\n");
+    printf("2) Compara dois valores.\n");
+    printf("3) Divide dois valores.\n");
+    printf("4) Multiplica dois valores.\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 2; i++){
+        printf("Você acertou!!!!\n");
+    }
+   
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 2){
+        printf("Você errou, a alternativa certa é a 2");
+    } 
+    
+    //Questão 4
+    printf("\nQuestão 4: Qual é o operador lógico para 'OU' em C?\n");
+    printf("1) &&\n");
+    printf("2) ||\n");
+    printf("3) !\n");
+    printf("4) <>\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 2; i++){
+        printf("Você acertou!!!!\n");
+    }
+   
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 2){
+        printf("Você errou, a alternativa certa é a 2");
+    } 
+
+    //Quetão 5
+    printf("\nQuestão 5: Qual é a estrutura de controle usada para repetição em C?\n");
+    printf("1) if\n");
+    printf("2) switch\n");
+    printf("3) for\n");
+    printf("4) else\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 3; i++){
+        printf("Você acertou!!!!\n");
+    }
+   
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 3){
+        printf("Você errou, a alternativa certa é a 3");
+    } 
+
+    //Questão 6
+    printf("\nQuestão 6: Qual é a função usada para ler um número inteiro do teclado em C?\n");
+    printf("1) read_integer();\n");
+    printf("2) input_int();\n");
+    printf("3) scanf();\n");
+    printf("4) get_int();\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 3; i++){
+        printf("Você acertou!!!!\n");
+    }
+   
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 3){
+        printf("Você errou, a alternativa certa é a 3");
+    } 
+
+    //Questão 7
+    printf("\nQuestão 7: Qual é o valor da expressão 5 + 3 * 2 em C?\n");
+    printf("1) 16\n");
+    printf("2) 11\n");
+    printf("3) 13\n");
+    printf("4) 10\n");
+    scanf("%d", &p);
+    fflush(stdin);
+
+    for(i=p; i == 2; i++){
+        printf("Você acertou!!!!\n");
+    }
+   
+    if(p > 4){
+        printf("Valor inválido\n");
+    } else if(p != 2){
+        printf("Você errou, a alternativa certa é a 2");
+    } 
+
+
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct Pessoa{
+    char nome[50];
+    int idade;
+    char cidade[50];
+
+
+}pessoas;
+
+int main(){
+    int i;
+    int N;
+
+    printf("Digite quantas pessoas voce quer cadrastrar\n");
+    scanf("%d", &N);
+
+    pessoas pessoa[N];
+
+    for(i=0;i<N;i++){
+        printf("\nPessoas %d\n", i + 1);
+
+        printf("Digite seu nome:\n");
+        scanf(" %49[^\n]", pessoa[i].nome);
+
+        printf("Digite sua idade:\n");
+        scanf("%d", &pessoa[i].idade);
+
+        printf("Digite sua cidade:\n");
+        scanf(" %49[^\n]", &pessoa[i].cidade);
+
+    }
+
+    for(i=0;i<N;i++){
+
+        printf("\nPessoa %d\n", i + 1);
+        
+        printf("Nome: %s\n", pessoa[i].nome);
+        printf("Idade: %d\n", pessoa[i].idade);
+        printf("Cidade: %s\n", pessoa[i].cidade);
+
+    }
+}

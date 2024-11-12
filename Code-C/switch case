@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main(){
+    int op, num1, num2;
+
+    printf("digite dois numeros:\n");
+    printf("primeiro numero:\n");
+    scanf("%d", &num1);
+
+    printf("segundo numero:\n");
+    scanf("%d", &num2);
+
+    printf("Digite a opcao desejada:\n");
+    printf("(1)soma\n(2)subtracao\n(3)multiplicacao\n(4)divisao\n(5)resto da divisao\n(6)sair do programa\n");
+    scanf("%d", &op);
+
+    switch (op) //sempre usado para uma sÃ³ variavel
+    {
+    case 1: //caso o numero escolhido for 1
+        printf("A soma dos numeros %d + %d e igual a %d\n", num1, num2, num1 + num2);
+        break;
+    case 2:
+        printf("A subtracao dos numeros %d - %d e igual a %d\n", num1, num2, num1 - num2);
+        break;
+    case 3:
+        printf("A multiplicacao dos numeros %d x %d e igual a %d\n", num1, num2, num1 * num2);
+        break;
+    case 4:
+        printf("A divisao dos numeros %d : %d e igual a %d\n", num1, num2, num1 / num2);
+        break;
+    case 5:
+        printf("A resto da divisao dos numeros %d / %d e igual a %d\n", num1, num2, num1 % num2);
+        break;
+    case 6:
+        printf("Saindo do programa\n");
+        break;
+    default:
+        printf("Opcao invalida\n");
+    }
+}

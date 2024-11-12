@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    int num, quadrado;
+
+    printf("Digite um numero para voce saber o quadrado dele:\n");
+    scanf("%d", &num);
+
+    quadrado = num * num;
+
+    printf("O resultado foi: %d\n", quadrado);
+
+
+}

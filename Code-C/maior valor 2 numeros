@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void Valor(int num1, int num2) {
+    if (num1 > num2) {
+        printf("O primeiro numero digitado e maior.\n");
+    } else if (num2 > num1) {
+        printf("O segundo numero e maior.\n");
+    } else {
+        printf("Os numeros sao iguais.\n");
+    }
+}
+
+int main() {
+    int num1, num2;
+    
+    printf("Digite dois numeros: ");
+    scanf("%d %d", &num1, &num2);
+    
+    Valor(num1, num2);
+    
+    return 0;
+}

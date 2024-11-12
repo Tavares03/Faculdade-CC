@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+    int v[10];
+    int i, n;
+
+    printf("Digite 10 numeros podendo ser negativo e positivo:\n");
+
+    for(i=0, n=1;i<10 && n<=10;i++, n++){
+        printf("digite o %d numero:\n", n);
+        scanf("%d", &v[i]);
+    }
+    for(i=0;i<10;i++){
+        if(v[i] > 0){
+            printf("Os numeros positivos sao: %d\n", v[i]);
+        }
+    }
+    for(i=0;i<10;i++){
+    if(v[i] < 0){
+            printf("Os numeros negativos sao: %d\n", v[i]);
+        }
+}
+}

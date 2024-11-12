@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(){
+    float temp;
+
+    printf("Digite uma temperatura em celcius para converter em fahrenheit\n");
+    scanf("%f", &temp);
+
+    printf("Em fahrenheit fica: %.2f\n", 1.8 * temp + 32); //formula para conversao de temperatura de celcius para farenheit
+}

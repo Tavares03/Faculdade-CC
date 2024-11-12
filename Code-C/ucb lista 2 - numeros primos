@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+
+    setlocale(LC_ALL, "portuguese");
+
+    int num, primo = 1, i;
+
+    printf("Digite um número para saber se ele é primo ou não:\n");
+    scanf("%d", &num);
+    fflush(stdin);
+
+    for(i=2; i<=num/2; i++){
+        if(num % i == 0){
+            primo = 0;
+            break;
+        }
+    }
+
+    if(primo == 1){
+        printf("%d é um numero primo\n", num);
+    }else{
+        printf("%d não é primo\n", num);
+    }
+
+
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(){
+    int m[3][3];
+    int i,j, s = 0;
+
+    printf("Digite os numeros da matrix 3x3:\n");
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            printf("Insira o numero da %d linha e da %d coluna:\n", i, j);
+            scanf("%d", &m[i][j]);
+        }
+    }
+    s = m[0][0] + m[1][1] + m[2][2];
+
+    printf("A soma dos elementos da diagonal foi: %d\n", s);
+
+}

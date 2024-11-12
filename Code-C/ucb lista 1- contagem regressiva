@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    
+    int num, i = 1;
+
+    printf("Digite um numero para fazer a contagem regressiva dele ate 1\n");
+    scanf("%d", &num);
+
+    while(i <= num){
+        printf("%d ", num);
+        num--; //decrementando o numero inserido pelo usuario ate o limite do laÃ§o while, ou seja ate 1
+    }
+}

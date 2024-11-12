@@ -1,0 +1,76 @@
+#include <stdio.h>
+int main(){
+    int v[4] = {1,2,3,4};
+    int op, div, i, s = 0;
+    int num;
+
+    printf("escolha uma opcao:\n");
+    printf("(1)soma\n(2)subtracao\n(3)multiplicacao\n(4)divisao\n(5)resto da divisao\n(6)sair do programa\n");
+    scanf("%d", &op);
+
+    switch(op){
+        case 1:
+            printf("Voce escolheu a soma\n");
+            for(i=0;i<4;i++){
+                s += v[i];
+            }
+            printf("A soma dos numeros foi: %d\n", s);
+            break;
+
+        case 2:
+            printf("Voce escolheu subtracao\n");
+            printf("por qual numero deseja subtrair os valores?\n");
+            scanf("%d", &num);
+
+            for(i=0;i<4;i++){
+                s += v[i];
+            }
+            div = s - num;
+            printf("A subtracao foi: %d\n", div);
+            break;
+
+        case 3:
+            printf("Voce escolheu multiplicacao\n");
+            s = 1;
+            for(i=0;i<4;i++){
+                s *= v[i];
+            }
+            printf("A multiplicacao foi: %d\n", s);
+            break;
+
+        case 4:
+            printf("Voce escolheu a divisao\n");
+            printf("por qual numero voce deseja dividiir os valores?\n");
+            scanf("%d", &num);
+
+            for(i=0;i<4;i++){
+                s += v[i];
+            }
+            div = s / num;
+            printf("A divisao foi: %d\n", div);
+            break;
+
+        case 5:
+            printf("Voce escolheu o resto da divisao\n");
+            printf("por qual numero voce deseja dividir para ver qual e o resto da divisao?\n");
+            scanf("%d", &num);
+            
+
+            for(i=0;i<4;i++){
+                s+=v[i];
+            }
+            div = s % num;
+            printf("O resto da divisao foi: %d\n", div);
+            break;
+
+        case 6:
+            printf("saindo do programa\n");
+            break;
+
+        default:
+            printf("Opcao invalida");
+            
+    }
+
+
+}

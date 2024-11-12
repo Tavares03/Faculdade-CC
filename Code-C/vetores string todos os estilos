@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> //biblioteca para usar funÃ§oes de string
+#include <locale.h> //biblioteca para o setlocale funcionar 
+#define N 50
+
+int main(){
+
+    //PROGRAMA COM STRCPY
+    //strcpy(<destino>, <origem>); = usado para alterar o conteudo de uma string
+
+    setlocale(LC_ALL, "Portuguese"); //para poder colocar acento Ã etc.
+
+    char origem[N] = {"Olá mundo"};
+    char destino[N];
+
+    printf("Antes do strcpy\n");
+    printf("%s\n", origem);
+    printf(destino);
+
+    // strcpy(destino, origem); //sempre primero o destino depois a origem(o que quer colocar dentro o destino)
+
+    // printf("Depois de strcpy\n");
+    // printf("%s\n",origem);
+    // printf(destino);
+
+    //PROGRAMA COM STRCAT
+    //strcat(<destino>, <origem>); = usado para juntar conteudo de duas strings
+    
+    // char s1[N] = {"algoritimo e "};
+    // char s2[N] = {"programacao estruturada"};
+
+    // printf("Antes do strcat:\n");
+    // printf("S1: %s\n", s1); //algoritmo e
+    // printf("S2: %s\n", s2); //programacao estruturada
+
+    // strcat(s1, s2);
+
+    // printf("Depois do strcat\n");
+    // printf(s1);
+
+    //PROGRAMA COM STRLEN E STRCSPN
+    //strlen(<string>); = mostra o tamanho da string
+    //nome da variavel[strcspn(nome da variavel, "\n")] = '/0' = usado para nao contar o caracter nulo
+
+    // char s[N];
+    // int i;
+
+    // printf("Digite um texto:\n");
+    // fgets(s, N, stdin);
+    // fflush(stdin);
+
+    // s[strcspn(s, "\n")] = '\0'; //para nao contar o caracter nulo
+
+    // i = strlen(s);
+
+    // printf("Tamanho do texto digitado: %d\n", i);
+
+    // printf("Impressao de posicao em posicao\n");
+
+    // for(i=0; i < strlen(s); i++){
+    //     printf("%d - %c \n", i, s[i]);
+    //}
+
+    //PROGRAMA COM STRCMP E STRCSPN
+    //strcmp(<string1>, <string2>); compara se a string 1 Ã© estritamente parecida com a string 2 se sim retorna 0
+
+    // char senha[N] = {"soudev"}; //senha certa
+    // char tentar_senha[N]; //checar a senha
+    // int ok;
+
+    // printf("Digite sua senha\n");
+    // fgets(tentar_senha, N, stdin);
+    // fflush(stdin);
+
+    // tentar_senha[strcspn(tentar_senha, "\n")] = '\0';
+
+    // ok = strcmp(senha, tentar_senha); //verificar se esses dois vetores sao iguais, se sim retornara 0, se nao retornara um numero aleatorio
+
+    // if(ok == 0){
+    //     printf("Acesso liberado\n");
+    // }else{
+    //     printf("Acesso negado\n");
+    // }
+
+
+
+}

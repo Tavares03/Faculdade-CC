@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+float CelsiusParaFahrenheit(float celsius) {
+    return (celsius * 9.0 / 5.0) + 32;
+}
+
+float FahrenheitParaCelsius(float fahrenheit) {
+    return (fahrenheit - 32) * 5.0 / 9.0;
+}
+
+int main() {
+    int escolha;
+    float temperatura, resultado;
+
+    printf("Escolha a conversao desejada:\n");
+    printf("1. Celsius para Fahrenheit\n");
+    printf("2. Fahrenheit para Celsius\n");
+    printf("Digite sua escolha (1 ou 2): ");
+    scanf("%d", &escolha);
+
+    switch (escolha) {
+        case 1:
+            printf("Digite a temperatura em Celsius: ");
+            scanf("%f", &temperatura);
+            resultado = CelsiusParaFahrenheit(temperatura);
+            printf("%.2f Celsius e igual a %.2f Fahrenheit\n", temperatura, resultado);
+            break;
+        case 2:
+            printf("Digite a temperatura em Fahrenheit: ");
+            scanf("%f", &temperatura);
+            resultado = FahrenheitParaCelsius(temperatura);
+            printf("%.2f Fahrenheit e igual a %.2f Celsius\n", temperatura, resultado);
+            break;
+        default:
+            printf("Escolha invalida. Por favor, escolha 1 ou 2.\n");
+            break;
+    }
+
+    return 0;
+}
