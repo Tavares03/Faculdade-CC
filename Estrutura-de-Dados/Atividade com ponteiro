@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(){
+	
+	int idade = 18;
+	int *ponteiro = &idade;
+	
+	printf("%d\n", *ponteiro); //imprime o valor amarzenado no endereço que o ponteiro está apontando
+	printf("%p\n", ponteiro); 
+	printf("%d\n", &ponteiro);
+	
+	
+}

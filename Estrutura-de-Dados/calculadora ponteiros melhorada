@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+void calculadora(int *valor1, int *valor2, int opr){
+	switch(opr){
+        case 1:
+        printf("%d", *valor1 + *valor2);
+        break;
+
+        case 2:
+        printf("%d", *valor1 - *valor2);
+        break;
+
+        case 3:
+        printf("%d", *valor1 / *valor2);
+        break;
+
+        case 4:
+        printf("%d", *valor1 * *valor2);
+        break;
+
+        default:
+        printf("Valor errado, tente novamente");
+    }
+
+}
+int main(){
+
+    int n1, n2, op;
+
+    printf("Digite o primeiro numero:");
+    scanf("%d", &n1);
+	
+    printf("Digite o segundo numero:");
+    scanf("%d", &n2);
+	
+    printf("Digite a opcao desejada: \n(1)soma\n(2)subtracao\n(3)divisao\n(4)multiplicacao\n");
+    scanf("%d", &op);
+	
+	calculadora(&n1, &n2, op);
+    
+}

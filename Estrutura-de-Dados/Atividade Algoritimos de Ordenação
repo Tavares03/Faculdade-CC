@@ -1,0 +1,361 @@
+//BUBLE SORT
+
+#include <stdio.h>
+
+void bubble_sort(int vetor[], int tam){ //Função chamada bubble_sort com dois parametros, um vetor do tipo inteiro e um tamanho do tipo inteiro
+	//variável auxiliar
+	int proximo = 0; // foi criada uma variavel do tipo inteiro inicializada em 0.
+
+	//varre todo o vetor externo
+	for(int i = 0; i < tam; i++){ //foi criado um laço de repetição para rodar o loop mais uma vez para organizar os numeros
+		//trabalha com os próximos elementos
+		for(int j = 0; j < (tam - 1); j++){ //laço de repetição para colocar os numeros nos lugares certos em ordem crescente
+			//Ocorre a troca
+	        if(vetor[j] > vetor[j+1]){ //foi criado para ordenar a cada dois numeros se eles estao na posição certa, se o da esquerda for maior que o da direita o if é executado
+	        	proximo = vetor[j]; //guardando o maior numero em uma variavel
+	        	vetor[j] = vetor[j+1]; //fazendo o maior numero receber o menor
+	        	vetor[j+1]=proximo; //o menor numero recebendo o maior
+	        }
+	    }
+	 }
+}
+
+int main() {
+   int vetor[6] = {8, 3, 1, 42, 12, 5}; //vetor com 6 numeros inicializados fora de ordem
+
+   //Aplicando a ordenação;
+   bubble_sort(vetor, 6); //executando a função com o vetor e o tamanho 6
+
+   //Apresentando o vetor ordenado
+   for(int i = 0; i < 6; i++){ //laço de repetição para imprimir o vetor inteiro em ordem
+	   printf("%d\n", vetor[i]); //imprimindo o vetor inteiro
+   }
+
+}
+
+
+//INSERT SORT
+
+#include <stdio.h>
+
+void insert_sort(int vetor[], int tam){ //função chamada insert_sort com os parametros int vetor e int tamanho
+  int troca; // variavel chamada troca
+
+  //Percorre todo o vetor
+  for(int i = 1; i < tam; i++){ //laço de repetição para percorrer todo o vetor
+    int proximo = i; //variavel chamada proximo inicializada com 'i'
+
+    //Responsável pelas trocas
+    //laço de repetição com uma condição que tem que comprir as duas para ser executada, a variavel proximo não pode ser igual a 0 e o vetor na posição i tem que ser menor que o i-1
+    while((proximo != 0) && (vetor[proximo] < vetor[proximo - 1])){
+      troca = vetor[proximo]; //guardando o valor do vetor na posição i na variavel troca
+      vetor[proximo] = vetor[proximo - 1]; //vetor na posição i recebendo valor do vetor na posição i - 1
+      vetor[proximo - 1] = troca; // vetor na posição i - 1 recebendo o valor da variavel troca
+      proximo--; //variavel proximo decrementando em 1
+    }
+  }
+}
+
+int main() {
+   int vetor[6] = {8, 3, 1, 42, 12, 5}; //inicializando um vetor com 6 numeros fora de ordem
+
+   //Aplicando a ordenação;
+   insert_sort(vetor, 6); //aplicando a função com a variavel vetor e seu tamanho
+
+   //Apresentando o vetor ordenado
+   for(int i = 0; i < 6; i++){ //usando o laço de repetição for para percorrrer o vetor
+	   printf("%d\n", vetor[i]); //imprimindo o vetor completo em ordem crescente
+   }
+
+}
+
+
+//SELECTION SORT
+
+#include <stdio.h>
+
+void select_sort(int vetor[], int tam){ // função chamada select_sort com dois parametros, vetor do tippo inteiro e variavel tamanho do tipo inteiro
+  int menor, troca; // duas variaveis do tipo inteiro, menor e troca
+  //Loop externo para repassar todo vetor
+  for(int i = 0; i < (tam-1); i++){ //laço de repetição para rodar o vetor
+	//variável para acompanhar o loop for pegando sempre o menor elemento
+	menor = i;
+	//Loop interno para trabalhar com o próximo elemento
+    for(int j = (i+1); j < tam; j++){
+      if(vetor[j] < vetor[menor]){ //se o vetor na posição j for menor que o vetor na posição i, o if sera executado
+        menor = j; // variavel menor recebe j
+      }
+    }
+    //Onde ocorre a troca
+    if(i != menor){ // se o i for diferente de menor o if sera executado
+      troca = vetor[i]; // valor do vetor na posição i é guardado na variavel troca
+      vetor[i] = vetor[menor]; // vetor na posição i recebendo o valor do vetor na posição menor
+      vetor[menor] = troca; //vetor na posição menor recebendo o valor da variavel troca
+    }
+  }
+}
+
+int main() {
+   int vetor[6] = {8, 3, 1, 42, 12, 5}; // vetor inicializado com 6 numeros fora de ordem
+
+   //Aplicando a ordenação;
+   select_sort(vetor, 6); // usando a função com a variavel vetor e seu tamanho 6
+
+   //Apresentando o vetor ordenado
+   for(int i = 0; i < 6; i++){ //laço de repetição para rodar o vetor
+	   printf("%d\n", vetor[i]); // imprimindo o vetor inteiro em ordem
+   }
+
+}
+
+//MERGE SORT
+
+#include <stdio.h> 
+
+// Função que mescla dois subarrays de um vetor em ordem crescente
+void merge(int vetor[], int inicio1, int fim1, int inicio2, int fim2) { 
+    // Vetor temporário utilizado para armazenar os elementos mesclados
+    int temp[50];
+    // Variáveis auxiliares para os índices
+    int i, j, k;
+    // Inicializa o índice do primeiro grupo
+    i = inicio1;
+    // Inicializa o índice do segundo grupo
+    j = inicio2;
+    k = 0; // Inicializa o índice para o vetor temporário
+
+    // Enquanto houver elementos em ambos os grupos...
+    while(i <= fim1 && j <= fim2) { 
+        // Compara os elementos dos dois grupos
+        if(vetor[i] < vetor[j]) { // Se o elemento do primeiro grupo for menor
+            temp[k++] = vetor[i++]; // Adiciona ao vetor temporário e incrementa os índices
+        } else {
+            temp[k++] = vetor[j++]; // Caso contrário, adiciona do segundo grupo
+        }
+    }
+
+    // Copia os elementos restantes do primeiro grupo, se houver
+    while(i <= fim1) {
+        temp[k++] = vetor[i++]; // Adiciona os elementos restantes ao vetor temporário
+    }
+
+    // Copia os elementos restantes do segundo grupo, se houver
+    while(j <= fim2) {
+        temp[k++] = vetor[j++]; // Adiciona os elementos restantes ao vetor temporário
+    }
+
+    // Transfere os elementos do vetor temporário de volta para o vetor original
+    for(i = inicio1, j = 0; i <= fim2; i++, j++) {
+        vetor[i] = temp[j]; // Copia os elementos ordenados para o vetor original
+    }
+}
+
+// Função que ordena o vetor usando o algoritmo Merge Sort
+void merge_sort(int vetor[], int inicio, int tam) {
+    // Verifica se ainda há mais de um elemento para ordenar
+    if(inicio < tam) {
+        // Calcula o índice do meio do vetor
+        int meio = (inicio + tam) / 2;
+
+        // Chamada recursiva para ordenar a primeira metade
+        merge_sort(vetor, inicio, meio);
+        // Chamada recursiva para ordenar a segunda metade
+        merge_sort(vetor, meio + 1, tam);
+
+        // Chama a função merge para combinar os dois subarrays ordenados
+        merge(vetor, inicio, meio, meio + 1, tam);
+    }
+}
+
+// Função principal do programa
+int main() {
+    // Declara um vetor de inteiros com valores desordenados
+    int vetor[6] = {8, 3, 1, 42, 12, 5};
+
+    // Chama a função merge_sort para ordenar o vetor
+    // Passa o vetor, o índice inicial e o índice final (tamanho - 1)
+    merge_sort(vetor, 0, 6 - 1);
+
+    // Apresenta o vetor ordenado
+    for(int i = 0; i < 6; i++) {
+        printf("%d\n", vetor[i]); // Imprime cada elemento do vetor ordenado
+    }
+
+}
+
+//QUICK SORT
+
+#include <stdio.h> 
+
+// Função que implementa o algoritmo Quick Sort
+void quick_sort(int vetor[], int tam) {
+    int i, j, grupo, troca; // Declara variáveis auxiliares
+
+    // Critério de parada da recursividade
+    if(tam < 2) {
+        return; // Se o tamanho do vetor for menor que 2, retorna da função
+    } else {
+        grupo = vetor[tam / 2]; // Define o pivô como o elemento do meio do vetor
+    }
+
+    // Loop principal que se comporta como dois
+    // Usando as variáveis 'i' e 'j' para percorrer o vetor
+    // Não temos critério de parada aqui, pois é um loop infinito
+    for(i = 0, j = tam - 1;; i++, j--) {
+        // Move 'i' para a direita enquanto o elemento for menor que o pivô
+        while(vetor[i] < grupo) {
+            i++;
+        }
+
+        // Move 'j' para a esquerda enquanto o elemento for maior que o pivô
+        while(grupo < vetor[j]) {
+            j--;
+        }
+
+        // Critério de parada do loop
+        if(i >= j) {
+            break; // Sai do loop se os índices se cruzarem
+        } else {
+            // Realiza a troca dos elementos em 'i' e 'j'
+            troca = vetor[i]; // Armazena o valor de vetor[i]
+            vetor[i] = vetor[j]; // Atribui o valor de vetor[j] a vetor[i]
+            vetor[j] = troca; // Atribui o valor armazenado a vetor[j]
+        }
+    }
+
+    // Chamada recursiva para ordenar os grupos
+    quick_sort(vetor, i); // Ordena a parte esquerda
+    quick_sort(vetor + i, tam - i); // Ordena a parte direita
+}
+
+// Função principal do programa
+int main() {
+    // Declara um vetor de inteiros com valores desordenados
+    int vetor[6] = {8, 3, 1, 42, 12, 5};
+
+    // Chama a função quick_sort para ordenar o vetor
+    quick_sort(vetor, 6);
+
+    // Apresenta o vetor ordenado
+    for(int i = 0; i < 6; i++) {
+        printf("%d\n", vetor[i]); // Imprime cada elemento do vetor ordenado
+    }
+}
+
+//SHELL SORT
+
+#include <stdio.h>
+// Função que implementa o algoritmo de ordenação Shell Sort
+void shell_sort(int vetor[], int tam) {
+    // Variável auxiliar para determinar o tamanho do grupo
+    int grupo = 1;
+
+    // Gera o tamanho do grupo de acordo com o tamanho do vetor
+    while(grupo < tam) {
+        grupo = 3 * grupo + 1; // Aumenta o grupo de acordo com a fórmula (3 * grupo + 1)
+    }
+
+    // Varre o vetor enquanto houver grupos para ordenar
+    while(grupo > 1) {
+        // Divide o grupo por 3 para reduzir o tamanho do grupo a cada iteração
+        grupo /= 3;
+
+        // Varremos cada grupo
+        for(int i = grupo; i < tam; i++) {
+            int troca = vetor[i]; // Armazena o elemento atual em uma variável temporária
+            int j = i - grupo; // Inicializa o índice j para a comparação
+
+            // Realiza a troca para ordenar os elementos do grupo
+            while(j >= 0 && troca < vetor[j]) {
+                vetor[j + grupo] = vetor[j]; // Move o elemento para a direita
+                j -= grupo; // Move o índice j para o grupo anterior
+            }
+
+            // Insere o elemento armazenado na posição correta
+            vetor[j + grupo] = troca; // Coloca o elemento armazenado na posição correta
+        }
+    }
+}
+
+// Função principal do programa
+int main() {
+    // Declara um vetor de inteiros com valores desordenados
+    int vetor[6] = {8, 3, 1, 42, 12, 5};
+
+    // Chama a função shell_sort para ordenar o vetor
+    shell_sort(vetor, 6);
+
+    // Apresenta o vetor ordenado
+    for(int i = 0; i < 6; i++) {
+        printf("%d\n", vetor[i]); // Imprime cada elemento do vetor ordenado
+    }
+}
+
+//HEAP SORT
+
+#include <stdio.h> 
+
+// Função que cria uma heap a partir de um vetor
+void cria_heap(int vetor[], int inicio, int fim) {
+    int pai = vetor[inicio]; // Armazena o valor do pai
+    int filho = inicio * 2 + 1; // Calcula o índice do filho esquerdo
+
+    // Enquanto houver filhos dentro do limite do vetor
+    while(filho <= fim) {
+        // Verifica se o pai tem dois filhos e quem é o maior
+        if(filho < fim) { // Se houver um filho à direita
+            if(vetor[filho] < vetor[filho + 1]) { // Compara os filhos
+                filho = filho + 1; // Move para o filho direito se for maior
+            }
+        }
+        
+        // Verifica se o filho é maior que o pai
+        // Se for, o filho se torna o novo pai e repete o processo
+        if(pai < vetor[filho]) {
+            vetor[inicio] = vetor[filho]; // Move o filho para a posição do pai
+            inicio = filho; // Atualiza o índice do pai
+            filho = 2 * inicio + 1; // Calcula o novo índice do filho
+        } else {
+            filho = fim + 1; // Sai do loop se o pai for maior ou igual ao filho
+        }
+    }
+
+    // O antigo pai ocupa o lugar do último filho analisado
+    vetor[inicio] = pai; // Coloca o pai na posição correta na heap
+}
+
+// Função que implementa o algoritmo de ordenação Heap Sort
+void heap_sort(int vetor[], int tam) {
+    int troca; // Variável para troca de elementos
+    int meio = (tam - 1) / 2; // Calcula o índice do último pai na heap
+
+    // Cria a heap a partir dos dados do vetor
+    for(int i = meio; i >= 0; i--) {
+        cria_heap(vetor, i, tam - 1); // Constrói a heap para cada pai
+    }
+
+    // Ordena o vetor
+    for(int i = tam - 1; i >= 1; i--) {
+        // Pega o maior elemento da heap (raiz) e coloca na sua posição final no vetor
+        troca = vetor[0]; // Armazena o maior elemento
+        vetor[0] = vetor[i]; // Move o último elemento para a raiz
+        vetor[i] = troca; // Troca os elementos
+
+        // Reconstrói a heap após a remoção do maior elemento
+        cria_heap(vetor, 0, i - 1); // Reconstroi a heap considerando o novo tamanho
+    }
+}
+
+// Função principal do programa
+int main() {
+    // Declara um vetor de inteiros com valores desordenados
+    int vetor[6] = {8, 3, 1, 42, 12, 5};
+
+    // Chama a função heap_sort para ordenar o vetor
+    heap_sort(vetor, 6);
+
+    // Apresenta o vetor ordenado
+    for(int i = 0; i < 6; i++) {
+        printf("%d\n", vetor[i]); // Imprime cada elemento do vetor ordenado
+    }
+}

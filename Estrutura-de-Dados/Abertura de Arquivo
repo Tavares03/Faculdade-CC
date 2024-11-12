@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){										// "w" abre o arquivo para escrita, criando-o se não existir ou trucando-o se já existir;
+												      // "a" abre o arquivo para edição (append), criando-o se não existir;
+												      // "r" abre o arquivo para leitura - o arquio deve existir;
+	FILE *arq;
+	
+	arq = fopen("adson.txt", "w"); 			
+												
+	if(arq){
+		printf("Arquivo existe");
+	}else {
+		printf("Arquivo nao existe");
+	}											
+	
+	fclose(arq);
+	
+	return 0;
+	
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char name[50];
+    int age;
+} Pessoa;
+
+int main(){
+    
+    Pessoa pessoa1;
+
+    printf("Digite um nome:\n");
+    fgets(pessoa1.name, sizeof(pessoa1.name), stdin);
+    fflush(stdin);
+    
+    printf("Digite a idade\n");
+    scanf("%d", &pessoa1.age);
+
+    printf("Nome: %s\n", pessoa1.name);
+    printf("Idade: %d\n", pessoa1.age);
+
+}

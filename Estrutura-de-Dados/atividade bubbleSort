@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int bubbleSort(int vetor[]){
+	int menor;
+	int i;
+	int j;
+	for(j = 0; j < 5; j++){
+		for(i = 0; i < 6; i++){
+		if(vetor[i] > vetor[i + 1]){
+			menor = vetor[i + 1];
+			vetor[i + 1] = vetor[i];
+			vetor[i] = menor;	
+		}
+	}
+}
+	return vetor[6];
+}
+
+int main(){
+	
+	int i;
+	
+	int vetor[] = {10, 5, 0, 4, 13, 2};
+	bubbleSort(vetor);
+	
+	for(i = 0; i < 6; i++){
+		printf("%d ", vetor[i]);
+	}
+	
+}

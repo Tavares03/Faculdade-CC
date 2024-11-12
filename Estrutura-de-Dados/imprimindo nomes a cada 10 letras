@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(){
+	FILE *arq;
+	char nome[10], *resultado;
+	arq = fopen("gabriel.txt", "r");
+	
+	if(arq){
+		while(!feof(arq)){ //File Ende of File
+			resultado = fgets(nome, 10, arq); //de 10 em 10 letras
+			if(resultado){
+				printf("%s", nome);
+			}
+		}
+	}else{
+		printf("Arquivo nao existe");
+	}
+	fclose(arq);
+	return 0;
+}

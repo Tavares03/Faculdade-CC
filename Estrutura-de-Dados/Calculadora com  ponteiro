@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int soma(int *valor1, int *valor2){
+    return *valor1 + *valor2;
+}
+
+int subtracao(int *valor1, int *valor2){
+    return *valor1 - *valor2;
+}
+
+int divisao(int *valor1, int *valor2){
+    return *valor1 / *valor2;
+}
+
+int multiplicacao(int *valor1, int *valor2){
+    return *valor1 * *valor2;
+}
+
+int main(){
+
+    int n1, n2, op;
+    int *num1, *num2;
+    
+    num1 = &n1;
+    num2 = &n2;
+
+    printf("Digite o primeiro numero:");
+    scanf("%d", &n1);
+	
+    printf("Digite o segundo numero:");
+    scanf("%d", &n2);
+	
+    printf("Digite a opcao desejada: \n(1)soma\n(2)subtracao\n(3)divisao\n(4)multiplicacao\n");
+    scanf("%d", &op);
+
+    switch(op){
+        case 1:
+        printf("%d + %d = %d", *num1, *num2, soma(&n1, &n2));
+        break;
+
+        case 2:
+        printf("%d - %d = %d", *num1, *num2, subtracao(&n1, &n2));
+        break;
+
+        case 3:
+        printf("%d / %d = %d", *num1, *num2, divisao(&n1, &n2));
+        break;
+
+        case 4:
+        printf("%d * %d = %d", *num1, *num2, multiplicacao(&n1, &n2));
+        break;
+
+        default:
+        printf("Valor errado, tente novamente");
+    }
+
+    
+}
