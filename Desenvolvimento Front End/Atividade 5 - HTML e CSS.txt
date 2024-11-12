@@ -1,0 +1,73 @@
+// CSS
+.borda01 {
+    width: 600px;
+    height: 600px;
+    
+}
+
+.cabeçalho{
+    padding-left: 10px;
+    text-align: left;
+    border: 1px solid black;
+
+    .imagem{
+        padding-right: 10px;
+        float:right;
+        width: 100px;
+        height: 130px;
+    }
+}
+
+.projetos{
+    padding-left: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.git{
+    padding-left: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+
+//HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style_Atividade_5.css">
+    <title>Atividade</title>
+</head>
+<body>
+<center>
+    <fieldset class="borda01">
+        <h1>PORTIFÓLIO</h1>
+
+        <div class="cabeçalho">
+        <p><strong>Informações Pessoais:</strong></p>
+        <img src="imagem/minhafoto.jpg" alt="foto" class="imagem">
+        <p>Nome: Gabriel Tavares Bastos de Moraes</p>
+        <p>Idade: 18</p>
+        <p>Data de Nascimento: 09/04/2006</p>
+        <p>Estudante da Universidade Católica de Brasília</p>
+        <p>Curso: Ciência da Computação | 2º Semestre</p>
+        <p>Telefone: 61 985970311</p>
+        </div>
+<br>
+        <div class="projetos">
+            <p><strong>Projetos:</strong></p>
+            <p>Automação de resumir emails para assuntos específicos com o SINDSEI</p>
+            <p>Começando com Git e GitHub</p> 
+        </div>
+<br>
+        <div class="git">
+            <p><strong>Link do GitHub:</strong> <a href="https://github.com/Tavares03/FrontEnd.git">Clique aqui</a></p>  
+        </div>
+
+    </fieldset>
+</center>
+</body>
+</html>
