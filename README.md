@@ -1,2 +1,2 @@
 # Faculdade-CC
-Projetos e atividades das materias da faculdade de Ciência da Computação
+Projetos e atividades da faculdade de Ciência da Computação
