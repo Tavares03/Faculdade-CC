@@ -1,0 +1,14 @@
+package aula3;
+
+import javax.swing.*;
+
+public class at2 {
+    public static void main(String[] args) {
+        String nome = JOptionPane.showInputDialog("Digite um nome:");
+
+        String resultado = nome.isEmpty() ? "Nome vazio" : "Nome com dados"; // isEmpty() é para verificar se a string está vazia ou não
+
+        System.out.println(resultado);
+
+    }
+}

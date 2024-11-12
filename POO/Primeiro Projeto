@@ -1,0 +1,40 @@
+package br.aula02;
+
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+
+public class PrimeiroProjeto {
+    public static void main(String[] args) {
+
+        System.out.println("Gabriel Tavares"); //pula a linha automático (println)
+        System.out.print("Adson\n");  
+
+        double nota = 7.0; //variavel de numeros tipo float
+        int num = 30; //variavel tipo inteiro
+        String palavra = "Olá";  //variavel tipo string
+
+        System.out.printf("Nota: %.2f\n", nota);
+        System.out.printf("Numero: %d\n", num);
+        System.out.printf("String: %s\n", palavra);
+
+        Scanner entrada = new Scanner(System.in); //para poder ler o codigo
+
+        System.out.println("Digite seu nome:");
+        String nome = entrada.nextLine(); //criando a variavel com a entrada.nextLine() para usar o scaf em string
+
+        System.out.println("Digite seu peso:");
+        double peso = entrada.nextDouble(); //criando a variavel com a entrada.nextDouble() para usar o scaf em double
+
+        System.out.println("Digite sua idade:");
+        int idade = entrada.nextInt(); //criando a variavel com a entrada.nextInt() para usar o scaf em inteiro
+
+        System.out.println("Nome: " + nome + "\npeso: " + peso + "\nidade: " + idade); //printando com as informações que o usuário colocou concatenando
+        //System.out.printf("Nome: %s\npeso %.2f\nidade: %d\n", nome, peso, idade); //printando com as informações que o usuário colocou usando as %
+
+
+        entrada.close();
+
+
+    }
+}

@@ -1,0 +1,18 @@
+package aula3;
+
+import java.util.Scanner;
+
+public class at3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        //System.out.println("2" == "2");
+
+        String s1 = "2";
+        System.out.println("Digite um numero");
+        String s2 = input.next();
+
+        System.out.println(s1.equals(s2)); // .equals serve para comparar duas strings
+
+    }
+}

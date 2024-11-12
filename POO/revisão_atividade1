@@ -1,0 +1,61 @@
+package atividade_revisao1;
+
+class Produto {
+
+    String nome;
+    double preco;
+    int quantidadeEstoque;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
+
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+
+    public void aplicarDesconto(double percentual){
+        preco -= preco * (percentual / 100);
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Produto p = new Produto();
+
+        p.setNome("Henrique");
+        System.out.println("Nome " + p.getNome());
+
+        p.setPreco(462.75);
+        System.out.println("Preço " + p.getPreco());
+
+        p.setQuantidadeEstoque(2);
+        System.out.println("Quantidade estoque " + p.getQuantidadeEstoque());
+
+        System.out.println("O loiro tem 20% de desconto");
+
+        p.aplicarDesconto(20);
+        System.out.println("Preço do Loiro " + p.getPreco());
+
+        p.aplicarDesconto(30);
+        System.out.println("A vista tem mais 10% de desconto " + p.getPreco());
+    }
+}

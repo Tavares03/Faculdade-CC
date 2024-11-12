@@ -1,0 +1,35 @@
+package arrays;
+
+import java.util.Arrays;
+
+public class ArrayPractive {
+    public static void main(String[] args) {
+
+        double[] notasArray = new double[4];
+
+        notasArray[0] = 7.5;
+        notasArray[1] = 4.0;
+        notasArray[2] = 7.0;
+        notasArray[3] = 6.0;
+
+        System.out.println(notasArray[0]);
+        System.out.println(notasArray[1]);
+        System.out.println(notasArray[2]);
+        System.out.println(notasArray[3]);
+
+        System.out.println("Iterando o array com a class Arrays");
+        String notas = Arrays.toString(notasArray);
+        System.out.println(notas);
+
+        System.out.println("Iterando com For Loop");
+        for (int i = 0; i < notasArray.length; i++){
+            System.out.println(" " + notasArray[i]);
+        }
+
+        System.out.println("Interando com ForEach");
+        for (double nota : notasArray){
+            System.out.println(nota);
+        }
+
+    }
+}

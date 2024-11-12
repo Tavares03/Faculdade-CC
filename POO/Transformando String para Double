@@ -1,0 +1,21 @@
+package aula3;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class at1 {
+    public static void main(String[] args) { //escreve main
+        //Scanner input = new Scanner(System.in);
+
+                String valor1 = JOptionPane.showInputDialog("Digite o valor 1:");
+                String valor2 = JOptionPane.showInputDialog("Digite o valor 2:");
+
+                double valor1TODouble = Double.parseDouble(valor1); //transformando os dois valores para double
+                double valor2ToDouble = Double.parseDouble(valor2);
+
+                double result = valor1TODouble + valor2ToDouble;
+
+        System.out.println(result);
+
+    }
+}

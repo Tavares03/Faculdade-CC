@@ -1,0 +1,15 @@
+package aula3;
+
+import javax.swing.*;
+
+public class operador_ternario {
+    public static void main(String[] args) {
+
+        String media = JOptionPane.showInputDialog("Digite a nota:");
+        double mediaParse = Double.parseDouble(media);
+
+        String resultado = mediaParse >= 7 ? "Aprovado" : "Reprovado"; //operador ternario
+
+        System.out.printf(resultado);
+    }
+}

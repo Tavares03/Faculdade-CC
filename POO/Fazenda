@@ -1,0 +1,44 @@
+//Class 1
+
+package Fazenda;
+
+public class Alimento {
+    String nomeAlimento;
+    double pesoAlimento;
+
+    }
+
+//Class 2
+
+package Fazenda;
+
+public class Animal {
+    String nomeAnimal;
+    double pesoAnimal = 270;
+
+    void comer(Alimento alimento){
+        this.pesoAnimal += alimento.pesoAlimento;
+    }
+}
+
+//Class 3
+
+package Fazenda;
+
+public class Fazenda {
+    public static void main(String[] args) {
+
+        var animal = new Animal();
+        animal.nomeAnimal = "Tavares";
+
+        var silo = new Alimento();
+        silo.nomeAlimento = "Silo";
+        silo.pesoAlimento = 200;
+
+        animal.comer(silo);
+
+        System.out.println(animal.pesoAnimal);
+
+    }
+
+}

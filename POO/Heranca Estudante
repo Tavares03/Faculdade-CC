@@ -1,0 +1,36 @@
+package heranca;
+
+class Pessoa {
+    String nome;
+
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    void exibirNome(){
+        System.out.println("Nome: " + nome);
+    }
+}
+
+class Estudante extends Pessoa{
+    String escola;
+
+    public Estudante(String nome, String escola) {
+        super(nome);
+        this.escola = escola;
+    }
+
+    void exibirDetalhes(){
+        super.exibirNome();
+        System.out.println("Escola: " + escola);
+    }
+}
+
+public class Heranca {
+    public static void main(String[] args) {
+
+        Estudante e = new Estudante("Gabriel", "UCB");
+        e.exibirDetalhes();
+        
+    }
+}

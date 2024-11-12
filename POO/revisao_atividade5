@@ -1,0 +1,94 @@
+package revisao_atividade5;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Livro {
+    private String titulo;
+    private String autor;
+    private int anoPublicacao;
+
+    public Livro(String titulo, String autor, int anoPublicacao) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public int getAnoPublicacao() {
+        return anoPublicacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Título: " + titulo + ", Autor: " + autor + ", Ano de Publicação: " + anoPublicacao;
+    }
+}
+
+class Biblioteca {
+    private List<Livro> livros;
+
+    public Biblioteca() {
+        this.livros = new ArrayList<>();
+    }
+
+    public void adicionarLivro(Livro livro) {
+        livros.add(livro);
+    }
+
+    public void removerLivro(String titulo) {
+        livros.removeIf(livro -> livro.getTitulo().equalsIgnoreCase(titulo));
+    }
+
+    public void listarLivros() {
+        if (livros.isEmpty()) {
+            System.out.println("Nenhum livro disponível.");
+        } else {
+            for (Livro livro : livros) {
+                System.out.println(livro);
+            }
+        }
+    }
+
+    public List<Livro> buscarPorAutor(String autor) {
+        List<Livro> livrosPorAutor = new ArrayList<>();
+        for (Livro livro : livros) {
+            if (livro.getAutor().equalsIgnoreCase(autor)) {
+                livrosPorAutor.add(livro);
+            }
+        }
+        return livrosPorAutor;
+    }
+}
+
+
+public class SistemaBiblioteca {
+    public static void main(String[] args) {
+        Biblioteca biblioteca = new Biblioteca();
+
+        biblioteca.adicionarLivro(new Livro("1984", "George Orwell", 1949));
+        biblioteca.adicionarLivro(new Livro("Dom Casmurro", "Machado de Assis", 1899));
+        biblioteca.adicionarLivro(new Livro("A Revolução dos Bichos", "George Orwell", 1945));
+
+        System.out.println("Lista de livros:");
+        biblioteca.listarLivros();
+
+        System.out.println("\nBuscando livros do autor 'George Orwell':");
+        List<Livro> livrosGeorge = biblioteca.buscarPorAutor("George Orwell");
+        for (Livro livro : livrosGeorge) {
+            System.out.println(livro);
+        }
+
+        biblioteca.removerLivro("1984");
+
+        System.out.println("\nLista de livros após remoção:");
+        biblioteca.listarLivros();
+    }
+}

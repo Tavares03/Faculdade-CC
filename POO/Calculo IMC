@@ -1,0 +1,29 @@
+package br.aula02;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class desafio {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        String nome = JOptionPane.showInputDialog("Digite seu nome:");
+        int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade"));
+        double peso = Double.parseDouble(JOptionPane.showInputDialog("Digite seu peso"));
+        double altura = Double.parseDouble(JOptionPane.showInputDialog("Digite sua altura"));
+
+        double imc;
+
+        imc = peso/(altura*altura);
+
+        JOptionPane.showMessageDialog(null,
+                "Nome: " + nome.toUpperCase() +
+                        "\nIdade: " +idade+
+                        "\nPeso: " +peso+
+                        "\nAltura: " +altura+
+                        "\nIMC: " +imc);
+
+        entrada.close();
+    }
+}

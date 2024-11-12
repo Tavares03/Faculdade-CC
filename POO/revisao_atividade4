@@ -1,0 +1,94 @@
+package revisao_atividade4;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+abstract class Veiculo {
+    protected String marca;
+    protected String modelo;
+    protected int ano;
+
+    public Veiculo(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    public abstract void exibirInformacoes();
+}
+
+
+class Carro extends Veiculo {
+    private int numeroPortas;
+
+    public Carro(String marca, String modelo, int ano, int numeroPortas) {
+        super(marca, modelo, ano);
+        this.numeroPortas = numeroPortas;
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Carro: " + marca + " " + modelo + ", Ano: " + ano + ", Portas: " + numeroPortas);
+    }
+}
+
+
+class Moto extends Veiculo {
+    private boolean temCarenagem;
+
+    public Moto(String marca, String modelo, int ano, boolean temCarenagem) {
+        super(marca, modelo, ano);
+        this.temCarenagem = temCarenagem;
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Moto: " + marca + " " + modelo + ", Ano: " + ano + ", Tem Carenagem: " + (temCarenagem ? "Sim" : "Não"));
+    }
+}
+
+
+class Concessionaria {
+    private List<Veiculo> veiculos;
+
+    public Concessionaria() {
+        this.veiculos = new ArrayList<>();
+    }
+
+    public void adicionarVeiculo(Veiculo veiculo) {
+        veiculos.add(veiculo);
+    }
+
+    public void removerVeiculo(String modelo) {
+        veiculos.removeIf(veiculo -> veiculo.modelo.equalsIgnoreCase(modelo));
+    }
+
+    public void listarVeiculos() {
+        if (veiculos.isEmpty()) {
+            System.out.println("Nenhum veículo disponível.");
+        } else {
+            for (Veiculo veiculo : veiculos) {
+                veiculo.exibirInformacoes();
+            }
+        }
+    }
+}
+
+
+public class HerancaList {
+    public static void main(String[] args) {
+        Concessionaria concessionaria = new Concessionaria();
+
+        concessionaria.adicionarVeiculo(new Carro("Toyota", "Corolla", 2020, 4));
+        concessionaria.adicionarVeiculo(new Moto("Yamaha", "YZF-R3", 2021, true));
+
+        System.out.println("Lista de veículos na concessionária:");
+        concessionaria.listarVeiculos();
+
+        concessionaria.removerVeiculo("Corolla");
+
+        System.out.println("\nLista de veículos após remoção:");
+        concessionaria.listarVeiculos();
+    }
+}

@@ -1,0 +1,79 @@
+package revisao_atividade3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Aluno {
+    private String nome;
+    private double nota;
+
+    public Aluno(String nome, double nota) {
+        this.nome = nome;
+        this.nota = nota;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getNota() {
+        return nota;
+    }
+}
+
+class GerenciadorAlunos {
+    private List<Aluno> alunos;
+
+    public GerenciadorAlunos() {
+        this.alunos = new ArrayList<>();
+    }
+
+    public void adicionarAluno(Aluno aluno) {
+        alunos.add(aluno);
+    }
+
+    public void removerAluno(String nome) {
+        alunos.removeIf(aluno -> aluno.getNome().equals(nome));
+    }
+
+    public void listarAlunos() {
+        for (Aluno aluno : alunos) {
+            System.out.println("Nome: " + aluno.getNome() + ", Nota: " + aluno.getNota());
+        }
+    }
+
+    public double calcularMedia() {
+        if (alunos.isEmpty()) {
+            return 0.0;
+        }
+
+        double soma = 0.0;
+        for (Aluno aluno : alunos) {
+            soma += aluno.getNota();
+        }
+        return soma / alunos.size();
+    }
+}
+
+
+public class CollectionList {
+    public static void main(String[] args) {
+        GerenciadorAlunos gerenciador = new GerenciadorAlunos();
+
+        gerenciador.adicionarAluno(new Aluno("Henrique", 9.5));
+        gerenciador.adicionarAluno(new Aluno("Gabriel", 8.0));
+        gerenciador.adicionarAluno(new Aluno("Caua", 7.5));
+
+        System.out.println("Lista de alunos:");
+        gerenciador.listarAlunos();
+
+        System.out.println("Média das notas: " + gerenciador.calcularMedia());
+
+        gerenciador.removerAluno("Gabriel");
+
+        System.out.println("Lista de alunos após remoção:");
+        gerenciador.listarAlunos();
+
+        System.out.println("Média das notas: " + gerenciador.calcularMedia());
+    }
+}

@@ -1,0 +1,37 @@
+package heranca;
+
+class Veiculo {
+    String marca;
+
+    public Veiculo(String marca){
+        this.marca = marca;
+    }
+
+    void exibirMarca(){
+        System.out.println("Marca do veiculo: " + marca);
+    }
+}
+
+class Carro extends Veiculo{
+    int numeroPortas;
+
+    public Carro(String marca, int numeroPortas) {
+        super(marca);
+        this.numeroPortas = numeroPortas;
+    }
+
+    void exibirDetalhes(){
+        super.exibirMarca();
+        System.out.println("Numero de portas " + numeroPortas);
+    }
+}
+
+public class Heranca {
+    public static void main(String[] args) {
+
+        Carro car = new Carro("honda", 4);
+        car.exibirDetalhes();
+
+    }
+}
+

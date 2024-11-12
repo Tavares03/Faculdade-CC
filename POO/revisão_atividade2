@@ -1,0 +1,48 @@
+package atividade_revisao2;
+
+class Pessoa {
+    String nome;
+    int idade;
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+}
+
+class Funcionario extends Pessoa{
+
+    public Funcionario(String nome, int idade, double salario, String cargo) {
+        super(nome, idade);
+        this.salario = salario;
+        this.cargo = cargo;
+    }
+
+    double salario;
+    String cargo;
+    double salarioAnual;
+
+    public void calcularSalarioAnual(){
+        salarioAnual = salario * 12;
+    }
+}
+
+public class Heranca {
+    public static void main(String[] args) {
+
+        Funcionario f = new Funcionario("Gabriel", 18, 5000, "Programador");
+
+        f.calcularSalarioAnual();
+        System.out.println(f.salarioAnual);
+    }
+}
+
+

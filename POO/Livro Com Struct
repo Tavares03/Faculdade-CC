@@ -1,0 +1,32 @@
+//Classe 1
+package Livro;
+
+public class ProdutoLivro {
+    String titulo;
+    double preco;
+    String autor;
+    int anoDePublicacao;
+
+    String obterInfo(){
+        return String.format(
+                "Info: Titulo: %s \nAutor: %s \npreco: %.2f \nAno: %d\n", titulo, autor, preco, anoDePublicacao);
+    }
+}
+
+//Classe 2
+package Livro;
+
+public class CodigoLivro {
+    public static void main(String[] args) {
+        ProdutoLivro l1 = new ProdutoLivro();
+
+        l1.titulo = "O Pequeno Principe";
+        l1.preco = 15.45;
+        l1.autor = "Antonie";
+        l1.anoDePublicacao = 2001;
+
+        System.out.println(l1.obterInfo());
+
+    }
+}
+

@@ -1,0 +1,70 @@
+package AT2_N1;
+
+class Pessoa{
+    private String nome;
+    private int idade;
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    void exibirInfo(){
+        System.out.println("Nome: " + getNome());
+        System.out.println("Idade: " + getIdade());
+    }
+}
+
+class Aluno extends Pessoa{
+    private String matricula;
+
+    public Aluno(String nome, int idade, String matricula) {
+        super(nome, idade);
+        this.matricula = matricula;
+    }
+
+    @Override
+    void exibirInfo() {
+        super.exibirInfo();
+        System.out.println("Matricula: " + matricula);
+    }
+}
+
+class Professor extends Aluno{
+    private double salario;
+
+    public Professor(String nome, int idade, String matricula, double salario) {
+        super(nome, idade, matricula);
+        this.salario = salario;
+    }
+
+    @Override
+    void exibirInfo() {
+        super.exibirInfo();
+        System.out.println("Salario: " + salario);
+    }
+}
+
+public class exercicio {
+    public static void main(String[] args) {
+        Professor p = new Professor("Gabriel", 18, "UC24101648", 1.599);
+        p.exibirInfo();
+    }
+
+}

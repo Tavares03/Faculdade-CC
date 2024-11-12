@@ -1,0 +1,53 @@
+//Classe 01
+package aula04;
+
+public class Usuario {
+    String nome;
+    String email;
+    String nickname;
+
+    public Usuario(String nome, String email, String nickname) {
+        this.nome = nome;
+        this.email = email;
+        this.nickname = nickname;
+    }
+
+    @Override
+    public String toString(){
+        return "\nNome: " + nome + " nickname: " + nickname + " email: " + email;
+    }
+
+}
+
+
+//Classe 02  
+package aula04;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+public class Teste {
+    public static void main(String[] args) {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
+        Usuario u1 = new Usuario("Gabriel", "gabriel.tbm16@gmail.com", "tavares09");
+        usuarios.add(u1);
+
+        usuarios.add(new Usuario("Henrique", "henrique.ad@gmail.com", "adson1421"));
+
+        Usuario u2 = new Usuario("Kummel", "henrique.k@gmail.com", "cumel03");
+        usuarios.add(u2);
+
+        System.out.println(usuarios.stream().count());
+        System.out.println(usuarios.get(0).email);
+
+        for (Usuario usuario : usuarios){
+            System.out.println("Nome: " + usuario.nome);
+        }
+
+        for (Usuario usuario : usuarios){
+            System.out.println(usuario);
+        }
+
+    }
+}

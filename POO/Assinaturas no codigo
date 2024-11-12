@@ -1,0 +1,35 @@
+//Codigo 1
+
+package Construtor;
+
+public class adson {
+
+    String name;
+    double preco;
+
+    adson(){  //assinaturas de mesmo nome
+
+    }
+
+    adson(double preco){  //assinaturas de mesmo nome
+        this.preco = preco;
+    }
+
+    adson(String name, double preco){  //assinaturas de mesmo nome
+        this.name = name;
+        this.preco = preco;
+    }
+}
+
+//Codigo 2
+
+package Construtor;
+
+public class adsonmain {
+    public static void main(String[] args) {
+        adson a1 = new adson("Arroz", 15);
+
+        System.out.println(a1.name);
+        System.out.println(a1.preco);
+    }
+}

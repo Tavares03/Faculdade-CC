@@ -1,0 +1,20 @@
+package br.aula02;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class teste {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        String nome = JOptionPane.showInputDialog("Digite seu nome:"); //para String
+        double peso = Double.parseDouble(JOptionPane.showInputDialog("Digite seu peso")); //para Double
+        int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade")); //para Int
+
+        System.out.printf("Nome: %s \npeso: %.2f \nidade: %d", nome, peso, idade);
+
+        entrada.close();
+
+    }
+}

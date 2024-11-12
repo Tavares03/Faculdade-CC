@@ -1,0 +1,27 @@
+//Classe 1
+
+package Calculadora;
+
+public class Calculadora {
+
+    double area;
+    static double pi = 3.14;
+
+}
+
+//Classe 2
+
+package Calculadora;
+
+public class CalculadoraMain {
+    public static void main(String[] args) {
+
+        var calc = new Calculadora();
+        calc.area = 21.3;
+
+        double circ = (calc.area * 2) * Calculadora.pi;
+
+        System.out.println("Resultado: " + circ);
+
+    }
+}

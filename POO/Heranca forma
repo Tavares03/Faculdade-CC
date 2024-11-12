@@ -1,0 +1,27 @@
+package heranca;
+
+class Forma{
+    void desenhar() {
+        System.out.println("Desenhando uma forma generica.");
+    }
+}
+
+class Circulo extends Forma{
+    @Override
+    void desenhar() {
+        System.out.println("Desenhando um circulo.");
+    }
+}
+
+public class Heranca {
+    public static void main(String[] args) {
+        Forma f = new Forma();
+        f.desenhar();
+
+        Circulo c = new Circulo();
+        c.desenhar();
+
+        Forma formaCirculo = new Circulo();
+        formaCirculo.desenhar();
+    }
+}
