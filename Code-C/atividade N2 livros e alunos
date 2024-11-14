@@ -1,1 +1,94 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+typedef struct _livro{
+    char titulo[100];
+    int numeroPaginas;
+    float preco;
+}Livro;
+
+typedef struct _aluno{
+    char nome[100];
+    int idade;
+    Livro *livro_fav;
+}Aluno;
+
+Livro *createLivro(char *titulo, int numeroPaginas, float preco){
+    Livro *l = calloc(1, sizeof(Livro));
+    strcpy(l->titulo, titulo);
+    l->numeroPaginas = numeroPaginas;
+    l->preco = preco;
+    return l;
+}
+
+void display_livro(Livro *livro){
+    printf("Titulo: %s\n", livro->titulo);
+    printf("Numero Paginas: %d\n", livro->numeroPaginas);
+    printf("Preco: %.2f\n", livro->preco);
+}
+
+Livro *copy_Livro(Livro *livro){
+    return createLivro(livro->titulo, livro->numeroPaginas, livro->preco);
+}
+
+void update_livro(Livro *livro_ref, float novoPreco){
+    livro_ref->preco = novoPreco;
+}
+
+void deallocate_livro(Livro **livro_ref){
+    Livro *livro = *livro_ref;
+    free(livro);
+    *livro_ref = NULL;
+}
+
+Aluno *create_Aluno(char *nome, int idade, const Livro *livro_fav){
+    Aluno *a = calloc(1, sizeof(Aluno));
+    strcpy(a->nome, nome);
+    a->idade = idade;
+    a->livro_fav = copy_Livro((Livro *)livro_fav);
+    return a;
+}
+
+void display_aluno(const Aluno *aluno){
+    printf("Nome: %s\n", aluno->nome);
+    printf("Idade: %d\n", aluno->idade);
+    printf("Livro Favorito:\n");
+    display_livro(aluno->livro_fav);
+}
+
+void deallocate_aluno(Aluno **aluno_ref){
+    Aluno *aluno = *aluno_ref;
+    deallocate_livro((&aluno->livro_fav));
+    free(aluno);
+    *aluno_ref = NULL;
+}
+
+int main() {
+    Livro *l1 = createLivro("The Lord of the Rings", 280, 129.00);
+    Livro *l2 = createLivro("Calice de Fogo", 300, 70.00);
+
+    display_livro(l1);
+    printf("\n");
+    display_livro(l2);
+    printf("\n");
+
+    update_livro(l1, 400.00);
+    update_livro(l2, 200.00);
+
+    Aluno *a1 = create_Aluno("Bob", 30, l1);
+    Aluno *a2 = create_Aluno("Mariana", 19, l2);
+
+    display_aluno(a1);
+    printf("\n");
+    display_aluno(a2);
+    printf("\n");
+
+    deallocate_livro(&l1);
+    deallocate_livro(&l2);
+    deallocate_aluno(&a1);
+    deallocate_aluno(&a2);
+
+    return 0;
+}
 
