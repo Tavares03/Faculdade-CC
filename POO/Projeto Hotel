@@ -1,0 +1,151 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Hotel{
+    private String nomeHotel;
+
+    public Hotel(String nomeHotel) {
+        this.nomeHotel = nomeHotel;
+    }
+
+    public String getNomeHotel() {
+        return nomeHotel;
+    }
+
+    public void setNomeHotel(String nomeHotel) {
+        this.nomeHotel = nomeHotel;
+    }
+}
+
+class Pessoa{
+
+    private String nomePessoa;
+    private int idade;
+
+    public Pessoa(String nomePessoa, int idade) {
+        this.nomePessoa = nomePessoa;
+        this.idade = idade;
+    }
+
+    public String getNomePessoa() {
+        return nomePessoa;
+    }
+
+    public void setNomePessoa(String nomePessoa) {
+        this.nomePessoa = nomePessoa;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa [nome = " + nomePessoa + ", idade = " + idade + "]";
+    }
+
+    public static void cadastrarPessoa(ArrayList<Pessoa> lista, Scanner scanner){
+        System.out.println("Digite o seu nome: ");
+        String nomePessoa = scanner.nextLine();
+
+        System.out.println("Digite sua idade ");
+        int idade = scanner.nextInt();
+        scanner.nextLine();
+
+        lista.add(new Pessoa(nomePessoa, idade));
+
+        System.out.println("Cadastro realizado com sucesso\n");
+
+    }
+
+    public static void listarPessoas(ArrayList<Pessoa> lista){
+        if (lista.isEmpty()) {
+            System.out.println("Nenhuma pessoa cadastrada");
+        }else {
+            System.out.println("Lista de Pessoas Cadastradas:");
+            for(int i = 0; i < lista.size(); i++){
+                System.out.println((i+1) + ". " + lista.get(i));
+            }
+            System.out.println();
+        }
+    }
+
+    public static void menu(){
+        ArrayList<Pessoa> lista = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        int opcao;
+
+        do{
+            System.out.println("Menu:");
+            System.out.println("1. Cadastrar pessoa");
+            System.out.println("2. Listar pessoa");
+            System.out.println("3. Sair");
+            System.out.println("Escolha uma opcao:");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    Pessoa.cadastrarPessoa(lista, scanner);
+                    break;
+                case 2:
+                    Pessoa.listarPessoas(lista);
+                    break;
+                case 3:
+                    System.out.println("Saindo do programa.....");
+                    break;
+                default:
+                    System.out.println("Opcao invalida. Tente novamente\n");
+                    break;
+            }
+
+        }while(opcao != 3);
+        scanner.close();
+    }
+
+}
+
+class Apartamento extends Hotel{
+    private int numeroAp;
+    private int andar;
+
+    public Apartamento(String nomeHotel) {
+        super(nomeHotel);
+    }
+
+    public int getNumeroAp() {
+        return numeroAp;
+    }
+
+    public void setNumeroAp(int numeroAp) {
+        this.numeroAp = numeroAp;
+
+    }
+
+    public int getAndar() {
+        return andar;
+    }
+
+    public void setAndar(int andar) {
+        this.andar = andar;
+    }
+
+
+}
+
+public class Projeto {
+    public static void main(String[] args) {
+
+        Apartamento ap = new Apartamento("Hotel Trivago");
+        Pessoa p = new Pessoa("Gabriel", 18);
+
+        Pessoa.menu();
+
+    }
+}
