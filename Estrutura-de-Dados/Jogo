@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <locale.h>
 
 typedef struct {
     int dificuldade;
@@ -8,178 +9,136 @@ typedef struct {
     int valor2;
     int operacao;
     int resultado;
-}Calcular;
+    int ponto;
+} Calcular;
 
-//Função de soma
-int soma(int valor1, int valor2){
-    return valor1+valor2;
-}
+void jogar(Calcular *calcular);
+void aleatoriedade(Calcular *calcular);
+int calculo(Calcular *calcular, int operacao);
+int soma(Calcular *calcular);
+int subtracao(Calcular *calcular);
+int multiplicacao(Calcular *calcular);
+int divisao(Calcular *calcular);
 
-//Função de Subtração
-int subtracao(int valor1, int valor2){
-    return valor1-valor2;
-}
+int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    srand(time(NULL)); 
 
-//Função de Multiplicação
-int multiplicacao(int valor1, int valor2){
-    return valor1*valor2;
-} 
+    Calcular calcular;
+    calcular.ponto = 0; 
 
-//Função de Divisão
-int divisao(int valor1, int valor2){
-    if (valor1 == 0){
-        return 0;
-        printf("Operacao Invalida");
-    } else {
-        return valor1/valor2;
-    }
-}
-
-int calcular(int valor1, int valor2, int num, int p){
-	
-	int resultado = 0;
-	printf("Insira o resultado:\n");
-	scanf("%d", &resultado);
-	switch(num)
-	{
-		case 0:
-		 if(resultado == soma(valor1,valor2)){
-		    printf("Parabens, Voce acertou!!!");
-            p += 10;
-            printf("%d", p);
-		 } else {
-		    printf("voce errou, contineu tentando!");
-            p -= 10;
-		}
-		break;
-		
-		case 1:
-		 if(resultado==subtracao(valor1,valor2)){
-		 	printf("Parabens, Voce acertou!!!\n");
-            p += 10;
-		 } else {
-		 	printf("Voce errou, continue tentando!\n");
-            p -= 10;
-		 }
-		break;
-		
-		case 2:
-		if(resultado==multiplicacao(valor1,valor2)){
-		 	printf("Parabens, Voce acertou!!!\n");
-		    p += 10;
-		 } else {
-		 	printf("Voce errou, continue tentando!\n");
-            p -= 10;
-		 }
-		break;
-		
-		case 3:
-		if(resultado==divisao(valor1,valor2)){
-		 	printf("Parabens, Voce acertou!!!\n");
-            p += 10;
-		 } else {
-		 	printf("Voce errou, continue tentando!\n");
-            p -= 10;
-		 }
-		break;
-	}
-
-    return p;
-}
-
-int aleatoriedade(int valor1, int valor2, int p){
-    int num, pontuacao;
-    num = rand() %3;
-    switch (num)
-    {
-        case 0:
-            printf("Questao de Soma: %d + %d\n", valor1, valor2);
-            return calcular(valor1, valor2, num, p);
-        break;
-
-        case 1:
-            printf("Questao de Subtracao: %d - %d\n", valor1, valor2);
-            return calcular(valor1, valor2, num, p);
-        break;
-    
-        case 2:
-            printf("Questao de Multiplicacao: %d * %d\n", valor1, valor2);
-            return calcular(valor1, valor2, num, p);
-        break;
-
-        case 3:
-            printf("Questao de Divisao: %d / %d\n", valor1, valor2);
-            return calcular(valor1, valor2, num, p);
-        break;
-
-
-    default:
-        break;
-    }
-}
-
-void jogar(){  
-    int dificuldade = 0;
-    int valor1, valor2;
-    int p = 0;
-    int f = 0;
-
-    while (f == 0){
-
-    for (int i = 0; i < 3; i++){
-
-        printf("Escolha a dificuldade desejada:\n");
-        printf("(1)facil\n(2)medio\n(3)dificil\n(4)insano\n");
-        scanf("%d", &dificuldade);
-
-    switch (dificuldade){
-    case 1:
-        printf("Dificuldade facil escolhida\n");
-        valor1 = rand() %10;
-        valor2 = rand() %10;
-        p = aleatoriedade(valor1, valor2, p);
-        break;
-    
-    case 2:
-        printf("Dificuldade medio escolhidada\n");
-        valor1 = rand() %100;
-        valor2 = rand() %100;
-        p = aleatoriedade(valor1, valor2, p);
-        break;
-
-    case 3:
-        printf("DIficuldade dificil escolhida\n");
-        valor1 = rand() %1000;
-        valor2 = rand() %1000;
-        p = aleatoriedade(valor1, valor2, p);
-        break;
-
-    case 4:
-        printf("Dificuldade insano escolhida\n");
-        valor1 = rand() %10000;
-        valor2 = rand() %10000;
-        p = aleatoriedade(valor1, valor2, p);
-        break;
-
-    default:
-        printf("Opcao invalida, tente novamente\n");
-        break;
-    }
-
-    }
-    printf("Deseja sair?(0) nao (1) sim\n");
-    scanf("%d", &f);
-    if (f == 1)
-    {
-        printf("\nSaindo do jogo\n");
-        printf("Pontuacao: %d", p);
-    }
-}
-}
-
-int main(){
-
-    jogar();
+    jogar(&calcular);
 
     return 0;
+}
+
+void jogar(Calcular *calcular) {
+    int continuar = 1;
+
+    while (continuar) {
+        printf("Escolha sua dificuldade desejada: ");
+        printf("\n1 - Fácil\n2 - Médio\n3 - Difícil\n4 - Insano\n");
+        scanf("%d", &calcular->dificuldade);
+
+        switch(calcular->dificuldade) {
+            case 1:
+                printf("Dificuldade fácil escolhida\n");
+                calcular->valor1 = rand() % 10 + 1;
+                calcular->valor2 = rand() % 10 + 1;
+                break;
+            case 2:
+                printf("Dificuldade média escolhida\n");
+                calcular->valor1 = rand() % 20 + 1;
+                calcular->valor2 = rand() % 20 + 1;
+                break;
+            case 3:
+                printf("Dificuldade difícil escolhida\n");
+                calcular->valor1 = rand() % 50 + 1;
+                calcular->valor2 = rand() % 50 + 1;
+                break;
+            case 4:
+                printf("Dificuldade insano escolhida\n");
+                calcular->valor1 = rand() % 100 + 1;
+                calcular->valor2 = rand() % 100 + 1;
+                break;
+            default:
+                printf("Dificuldade inválida! Escolhendo fácil por padrão.\n");
+                calcular->valor1 = rand() % 10 + 1;
+                calcular->valor2 = rand() % 10 + 1;
+        }
+
+        aleatoriedade(calcular);
+
+        printf("Deseja continuar? (0)-não (1)-sim\n");
+        scanf("%d", &continuar);
+    }
+
+    printf("\nJogo encerrado\n");
+    printf("Pontuação final: %d\n", calcular->ponto);
+}
+
+void aleatoriedade(Calcular *calcular) {
+    int operacao = rand() % 4;
+   
+    switch (operacao) {
+        case 0:
+            printf("Questão de soma: %d + %d\n", calcular->valor1, calcular->valor2);
+            break;
+        case 1:
+            printf("Questão de subtração: %d - %d\n", calcular->valor1, calcular->valor2);
+            break;
+        case 2:
+            printf("Questão de multiplicação: %d x %d\n", calcular->valor1, calcular->valor2);
+            break;
+        case 3:
+            printf("Questão de divisão: %d : %d\n", calcular->valor1, calcular->valor2);
+            break;
+    }
+
+    calculo(calcular, operacao);
+}
+
+int calculo(Calcular *calcular, int operacao) {
+    int resultado_correto;
+
+    printf("Insira o resultado:\n");
+    scanf("%d", &calcular->resultado);
+
+    switch(operacao) {
+        case 0: resultado_correto = soma(calcular); break;
+        case 1: resultado_correto = subtracao(calcular); break;
+        case 2: resultado_correto = multiplicacao(calcular); break;
+        case 3: resultado_correto = divisao(calcular); break;
+    }
+
+    if (calcular->resultado == resultado_correto) {
+        printf("Resultado correto\n");
+        calcular->ponto += 10;
+        return 1;
+    } else {
+        printf("Resultado incorreto. A resposta correta era: %d\n", resultado_correto);
+        calcular->ponto -= 5;
+        return 0;
+    }
+}
+
+int soma(Calcular *calcular) {
+    return calcular->valor1 + calcular->valor2;
+}
+
+int subtracao(Calcular *calcular) {
+    return calcular->valor1 - calcular->valor2;
+}
+
+int multiplicacao(Calcular *calcular) {
+    return calcular->valor1 * calcular->valor2;
+}
+
+int divisao(Calcular *calcular) {
+    if (calcular->valor2 != 0) {
+        return calcular->valor1 / calcular->valor2;
+    } else {
+        printf("Erro: Divisão por zero!\n");
+        return 0;
+    }
 }
