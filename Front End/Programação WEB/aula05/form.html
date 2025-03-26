@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Calculadora de Custo de Construção</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Custos Materiais de Construção</h1>
+    <form id="form" class="verde">
+      <div class="form-group">
+        <input type="number" id="tijolo" class="form-control" placeholder="Quantidade de tijolos"/>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="precotijolo" class="form-control" placeholder="Preço por tijolo"/>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="cimento" class="form-control" placeholder="Quantidade de sacos de cimento" />
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="precocimento" class="form-control" placeholder="Preço por saco de cimento"/>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="areia" class="form-control" placeholder="Quantidade de areia (m³)"/>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="precoareia" class="form-control" placeholder="Preço por m³ de areia" />
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-block">Calcular Custo</button>
+    </form>
+    <div id="resultado" class="verde alert alert-success" style="display: none;"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+<script>
+const firebaseConfig = {
+    apiKey: "AIzaSyBeEr6vzu7lFOY7Krl4JAJ5afN4-OazzL0",
+    authDomain: "custo-construcao.firebaseapp.com",
+    projectId: "custo-construcao",
+    storageBucket: "custo-construcao.firebasestorage.app",
+    messagingSenderId: "1017421841528",
+    appId: "1:1017421841528:web:3540ff575ae1376a3fd98d",
+    measurementId: "G-DEQ869N91E"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  
+  document.getElementById('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+  
+   
+    const tijolo = Number(document.getElementById('tijolo').value);
+    const precotijolo = Number(document.getElementById('precotijolo').value);
+    const cimento = Number(document.getElementById('cimento').value);
+    const precocimento = Number(document.getElementById('precocimento').value);
+    const areia = Number(document.getElementById('areia').value);
+    const precoareia = Number(document.getElementById('precoareia').value);
+    const custotal = (tijolo * precotijolo) + (cimento * precocimento) + (areia * precoareia);
+  
+   
+    await db.collection('alunos').add({
+      tijolo,
+      precotijolo, 
+      cimento,
+      precocimento,
+      areia,
+      precoareia,
+      custotal,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  
+    const resultado = document.getElementById('resultado');
+    resultado.style.display = 'block';
+    resultado.innerHTML = `Custo Total: R$ ${custotal.toFixed(2)}`;
+  
+    document.getElementById('form').reset();
+  });
+</script>
