@@ -130,3 +130,39 @@ JOIN Funcionario f ON v.id_funcionario = f.id_funcionario
 GROUP BY f.nome;
 
 SELECT * FROM media_vendas_por_funcionario;
+
+CREATE VIEW media_vendas_por_funcionarios_por_periodo AS
+SELECT
+	f.nome AS nome_funcionario,
+    ROUND(AVG(v.valor_venda),2) AS media_valor_venda,
+    COUNT(*) AS total_vendas
+FROM Venda v
+JOIN Funcionario f ON v.id_funcionario = f.id_funcionario
+WHERE v.data_venda >= '2024-01-01'
+GROUP BY f.id_funcionario, f.nome;
+
+SELECT * FROM media_vendas_por_funcionarios_por_periodo;
+
+-- Inserir 50 clientes de forma aleatória
+DELIMETER $$ -- criando um novo delimitador 
+
+-- criando a procedure
+CREATE PROCEDURE inserir_clientes()
+BEGIN
+	DECLARE i INT DEFAULT 1
+    WHILE 1 <= 50 DO
+		INSERT INTO cliente (nome, cnh, tipo_cliente, cartao_pagamento)
+        VALUES (
+			CONCAT('Cliente', i),
+            CONCAT('CNH', LPAD(i, 10, '0')),
+            IF (i % 2 = 0, 'Física', 'Jurídica'),
+            LPAD(FLOOR(RAND() * 10000000000000000, 16, '0')
+            );
+            SET i = i + 1;
+	END WHILE;
+END $$
+    
+DELIMETER ;
+
+CALL inserir_clientes();
+    
