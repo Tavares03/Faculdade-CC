@@ -6,7 +6,7 @@ public class NotaFiscal {
     public NotaFiscal(Pedido pedido) { this.pedido = pedido; }
 
     public void enviarPrimeiraVia() {
-        System.out.println("1ª via enviada à expedição.");
+        System.out.println("1ª via enviada a expedição.");
     }
 
     public void enviarSegundaVia() {

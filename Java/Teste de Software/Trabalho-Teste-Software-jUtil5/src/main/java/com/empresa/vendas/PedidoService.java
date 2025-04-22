@@ -6,7 +6,7 @@ public class PedidoService {
     private DepartamentoExpedicao expedicao = new DepartamentoExpedicao();
     private DepartamentoFinanceiro financeiro = new DepartamentoFinanceiro();
 
-    public void processarPedido(Pedido pedido) {
+    public String processarPedido(Pedido pedido) {
         if (avaliador.aprovarCredito(pedido.getCliente())) {
             NotaFiscal nf = new NotaFiscal(pedido);
             nf.enviarPrimeiraVia();
@@ -17,12 +17,15 @@ public class PedidoService {
 
             if (financeiro.receberPagamento()) {
                 pedido.finalizar();
+                return "Pedido finalizado com sucesso.";
             } else {
                 financeiro.enviarCobrancaAdicional();
                 pedido.cancelar();
+                return "Pedido cancelado devido à falta de pagamento.";
             }
         } else {
             pedido.cancelar();
+            return "Pedido cancelado devido à reprovação de crédito.";
         }
     }
 }
