@@ -1,0 +1,56 @@
+
+# Testes E2E e de Carga – Sistema de Avaliação de Clientes com IA
+
+## 📋 Roteiros de Testes
+
+### Selenium (Teste E2E)
+**Objetivo**: Validar se o sistema responde corretamente a uma simulação real de uso via formulário.
+
+**Passos:**
+1. Acessar a URL `http://localhost`.
+2. Preencher os seguintes campos do formulário:
+   - Nome do Cliente: João da Silva
+   - Limite Restante: 1500.00
+   - Compras: 300.00
+   - Saques: 200.00
+   - Limite Total: 5000.00
+3. Submeter o formulário.
+4. Verificar se a resposta do sistema é exibida corretamente na tela (campo `resultado`).
+
+### JMeter (Teste de Carga)
+**Objetivo**: Avaliar o desempenho e estabilidade do endpoint `/avaliar` com múltiplas requisições simultâneas.
+
+**Configuração:**
+- Threads (usuários virtuais): 20
+- Loop por thread: 10
+- Total de requisições: 200
+- Endpoint: `POST http://localhost:8000/avaliar`
+- Parâmetros:
+  - balance: 1500.0
+  - purchases: 500.0
+  - cash_advance: 100.0
+  - credit_limit: 4000.0
+
+---
+
+## 🧪 Metodologia
+
+- **Selenium**: Utilizado para validar o comportamento do sistema do ponto de vista do usuário final.
+- **JMeter**: Simulou a carga de acessos simultâneos ao back-end, com foco na estabilidade e no tempo de resposta.
+
+---
+
+## 📊 Resultados Esperados
+
+- A resposta do formulário deve exibir corretamente o perfil do cliente.
+- O endpoint `/avaliar` deve responder com sucesso a todas as 200 requisições sem falhas.
+- O tempo médio de resposta deve permanecer estável durante o teste de carga.
+
+---
+
+## 📁 Arquivos Inclusos
+
+- `teste_selenium.py`: Script de teste automatizado com Selenium.
+- `teste_jmeter.jmx`: Script de carga para o Apache JMeter.
+- `Sistema/`: Código original extraído para testes (não modificado).
+
