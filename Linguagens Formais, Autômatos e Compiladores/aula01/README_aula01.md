@@ -1,4 +1,4 @@
-# Comandas para compilar e depois executar os codigos
+# Comandos para compilar e depois executar os codigos
 
 ## Compilar
 
