@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Calculadora de Juros</string>
+    <string name="amount_hint">Dinheiro emprestado</string>
+    <string name="question_friendship">Quanto a pessoa é sua amiga?</string>
+    <string name="best_friend">Melhor amigo</string>
+    <string name="friend">Amigo (5%)</string>
+    <string name="colleague">Colega (10%)</string>
+    <string name="stranger">Desconhecido (25%)</string>
+    <string name="round_switch">Arredondar?</string>
+    <string name="result_label">A pessoa deve te pagar:</string>
+    <string name="default_result">R$ 0,00</string>
+    <string name="calculate_button">Calcular</string>
+</resources>
