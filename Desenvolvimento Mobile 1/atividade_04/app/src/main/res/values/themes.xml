@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Att04" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#E84118</item>
+        <item name="colorPrimaryVariant">#C0392B</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#7C3AED</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+</resources>
