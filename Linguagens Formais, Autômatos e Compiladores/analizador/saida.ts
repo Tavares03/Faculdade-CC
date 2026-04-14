@@ -1,0 +1,15 @@
+program - KW
+var - KW
+integer - KW
+real - KW
+begin - KW
+end - KW
+if - KW
+then - KW
+else - KW
+while - KW
+do - KW
+exemplo - ID
+x - ID
+y - ID
+z - ID
