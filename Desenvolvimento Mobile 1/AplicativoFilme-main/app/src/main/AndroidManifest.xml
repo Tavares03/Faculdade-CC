@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.appfilme">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="AppFilme"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppFilme">
+
+        <!-- Tela de Favoritos -->
+        <activity
+            android:name=".uii.FavoritosActivity"
+            android:exported="false" />
+
+        <!-- Tela de Detalhes -->
+        <activity
+            android:name=".uii.DetalhesActivity"
+            android:exported="false" />
+
+        <!-- Tela principal -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="AppFilme"
+            android:theme="@style/Theme.AppFilme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
