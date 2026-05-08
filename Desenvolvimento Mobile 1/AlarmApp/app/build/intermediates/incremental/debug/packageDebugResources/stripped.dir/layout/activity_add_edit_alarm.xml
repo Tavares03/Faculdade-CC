@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_arrow_back"
+                app:iconTint="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Novo Alarme"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+        <!-- TimePicker -->
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:timePickerMode="clock"
+            android:theme="@style/TimePickerTheme"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="24dp"
+            android:background="@color/card_stroke"
+            app:layout_constraintTop_toBottomOf="@id/timePicker"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Label section -->
+        <TextView
+            android:id="@+id/labelMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mensagem do alarme"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.1"
+            android:textAllCaps="true"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/divider1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLabel"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="@color/accent_orange"
+            app:boxBackgroundColor="@color/card_bg"
+            app:hintTextColor="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/labelMsg"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex: Acordar para academia"
+                android:inputType="text"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="16sp"
+                 />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Repeat section -->
+        <TextView
+            android:id="@+id/labelRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repetir"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.1"
+            android:textAllCaps="true"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tilLabel"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Day chips -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="10dp"
+            app:singleSelection="false"
+            app:layout_constraintTop_toBottomOf="@id/labelRepeat"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Seg" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Ter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Qua" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipThu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Qui" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Sex" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Sáb" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DayChipStyle"
+                android:text="Dom" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Vibrate switch -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardVibrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp"
+            app:layout_constraintTop_toBottomOf="@id/chipGroupDays"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📳  Vibrar"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <Switch
+                    android:id="@+id/switchVibrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Save button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="28dp"
+            android:text="Salvar Alarme"
+            android:textSize="16sp"
+            android:textColor="@color/bg_dark"
+            android:fontFamily="sans-serif-medium"
+            app:backgroundTint="@color/accent_orange"
+            app:cornerRadius="16dp"
+            app:layout_constraintTop_toBottomOf="@id/cardVibrate"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

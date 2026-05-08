@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Alarmes</string>
+    <string name="add_alarm">Novo Alarme</string>
+    <string name="edit_alarm">Editar Alarme</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Excluir</string>
+    <string name="dismiss">Parar</string>
+    <string name="snooze">Soneca</string>
+    <string name="alarm_label">Mensagem do alarme</string>
+    <string name="alarm_label_hint">Ex: Acordar para academia</string>
+    <string name="vibrate">Vibrar</string>
+    <string name="repeat">Repetir</string>
+    <string name="alarm_set">Alarme definido</string>
+    <string name="alarm_deleted">Alarme removido</string>
+</resources>

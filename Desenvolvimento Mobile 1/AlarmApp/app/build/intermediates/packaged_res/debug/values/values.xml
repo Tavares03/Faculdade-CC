@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_orange">#FF5C00</color>
+    <color name="accent_orange_dim">#3D1800</color>
+    <color name="bg_dark">#0D0D0F</color>
+    <color name="black">#FF000000</color>
+    <color name="card_bg">#18181B</color>
+    <color name="card_stroke">#2A2A2F</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="switch_thumb_off">#4A4A55</color>
+    <color name="switch_thumb_on">#FF5C00</color>
+    <color name="switch_track_off">#2A2A2F</color>
+    <color name="switch_track_on">#3D1800</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="text_hint">#4A4A55</color>
+    <color name="text_primary">#F5F5F7</color>
+    <color name="text_secondary">#9A9AA8</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="add_alarm">Novo Alarme</string>
+    <string name="alarm_deleted">Alarme removido</string>
+    <string name="alarm_label">Mensagem do alarme</string>
+    <string name="alarm_label_hint">Ex: Acordar para academia</string>
+    <string name="alarm_set">Alarme definido</string>
+    <string name="app_name">Alarmes</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Excluir</string>
+    <string name="dismiss">Parar</string>
+    <string name="edit_alarm">Editar Alarme</string>
+    <string name="repeat">Repetir</string>
+    <string name="save">Salvar</string>
+    <string name="snooze">Soneca</string>
+    <string name="vibrate">Vibrar</string>
+    <style name="DayChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_bg_selector</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="chipStrokeColor">@color/chip_stroke_selector</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="chipCornerRadius">12dp</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+    <style name="Theme.AlarmApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="colorPrimaryVariant">@color/accent_orange_dim</item>
+        <item name="colorOnPrimary">@color/bg_dark</item>
+        <item name="colorSurface">@color/card_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="TimePickerTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="colorSurface">@color/card_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+    </style>
+</resources>

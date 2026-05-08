@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-mergeDebugResources-41:\\layout\\item_alarm.xml",
+        "source": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-main-44:\\layout\\item_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-mergeDebugResources-41:\\layout\\activity_add_edit_alarm.xml",
+        "source": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-main-44:\\layout\\activity_add_edit_alarm.xml"
+    },
+    {
+        "merged": "com.desafio04.alarmapp-mergeDebugResources-41:/layout/item_alarm.xml",
+        "source": "com.desafio04.alarmapp-main-44:/layout/item_alarm.xml"
+    },
+    {
+        "merged": "com.desafio04.alarmapp-mergeDebugResources-41:/layout/activity_add_edit_alarm.xml",
+        "source": "com.desafio04.alarmapp-main-44:/layout/activity_add_edit_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-mergeDebugResources-41:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-main-44:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-mergeDebugResources-41:\\layout\\activity_alarm_ring.xml",
+        "source": "C:\\Users\\gabri\\.gradle\\daemon\\8.4\\com.desafio04.alarmapp-main-44:\\layout\\activity_alarm_ring.xml"
+    }
+]
