@@ -1,0 +1,36 @@
+R_DEF: Internal format may change without notice
+local
+color bg_dark
+color black
+color card_dark
+color orange_accent
+color spinner_bg
+color text_primary
+color text_secondary
+color white
+drawable bg_button_orange
+drawable bg_button_swap
+drawable bg_card_dark
+drawable bg_spinner
+drawable ic_launcher_foreground
+drawable ic_swap
+id btnConverter
+id btnTrocar
+id etValor
+id progressBar
+id spinnerDestino
+id spinnerOrigem
+id tvErro
+id tvResultado
+id tvSiglaMoedaDestino
+id tvSiglaMoedaOrigem
+id tvTaxa
+id tvUltimaAtualizacao
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string converter
+string hint_valor
+string trocar_moedas
+style Theme.Conversor

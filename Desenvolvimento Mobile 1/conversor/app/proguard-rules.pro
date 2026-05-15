@@ -1,0 +1,4 @@
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.seupacote.conversor.model.** { *; }
+-keep interface com.seupacote.conversor.api.** { *; }

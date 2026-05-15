@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\gabri\\.gradle\\daemon\\8.2\\com.seupacote.conversor.app-mergeDebugResources-36:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\gabri\\.gradle\\daemon\\8.2\\com.seupacote.conversor.app-main-39:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.seupacote.conversor.app-mergeDebugResources-36:/layout/activity_main.xml",
+        "source": "com.seupacote.conversor.app-main-39:/layout/activity_main.xml"
+    }
+]
