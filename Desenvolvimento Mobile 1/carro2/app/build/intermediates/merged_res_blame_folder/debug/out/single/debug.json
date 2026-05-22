@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/drawable_gradient_bottom.xml.flat",
+        "source": "com.example.carro2.app-main-45:/drawable/gradient_bottom.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.carro2.app-main-45:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/drawable_circle_dark_bg.xml.flat",
+        "source": "com.example.carro2.app-main-45:/drawable/circle_dark_bg.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.carro2.app-main-45:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/layout_item_car.xml.flat",
+        "source": "com.example.carro2.app-main-45:/layout/item_car.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/layout_item_spec_row.xml.flat",
+        "source": "com.example.carro2.app-main-45:/layout/item_spec_row.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/drawable_spec_row_bg.xml.flat",
+        "source": "com.example.carro2.app-main-45:/drawable/spec_row_bg.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/layout_activity_car_detail.xml.flat",
+        "source": "com.example.carro2.app-main-45:/layout/activity_car_detail.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/layout_activity_add_car.xml.flat",
+        "source": "com.example.carro2.app-main-45:/layout/activity_add_car.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/layout_activity_main.xml.flat",
+        "source": "com.example.carro2.app-main-45:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.carro2.app-main-45:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-merged_res-43:/drawable_ic_car_placeholder.xml.flat",
+        "source": "com.example.carro2.app-main-45:/drawable/ic_car_placeholder.xml"
+    }
+]

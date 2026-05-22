@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.example.carro2.app-mergeDebugResources-42:/layout/item_spec_row.xml",
+        "source": "com.example.carro2.app-main-45:/layout/item_spec_row.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-mergeDebugResources-42:/layout/activity_car_detail.xml",
+        "source": "com.example.carro2.app-main-45:/layout/activity_car_detail.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-mergeDebugResources-42:/layout/activity_main.xml",
+        "source": "com.example.carro2.app-main-45:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-mergeDebugResources-42:/layout/item_car.xml",
+        "source": "com.example.carro2.app-main-45:/layout/item_car.xml"
+    },
+    {
+        "merged": "com.example.carro2.app-mergeDebugResources-42:/layout/activity_add_car.xml",
+        "source": "com.example.carro2.app-main-45:/layout/activity_add_car.xml"
+    }
+]

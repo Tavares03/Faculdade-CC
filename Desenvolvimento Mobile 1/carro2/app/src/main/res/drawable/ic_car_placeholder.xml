@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="130dp"
+    android:viewportWidth="200"
+    android:viewportHeight="130">
+
+    <path android:fillColor="#1A1A22"
+        android:pathData="M0,0 L200,0 L200,130 L0,130 Z" />
+
+    <!-- Car body -->
+    <path android:fillColor="#2A2A35"
+        android:pathData="M15,85 L15,68 Q15,55 30,50 L55,38 Q65,28 100,28 Q135,28 145,38 L170,50 Q185,55 185,68 L185,85 Z" />
+
+    <!-- Windows -->
+    <path android:fillColor="#3A4A5A"
+        android:pathData="M58,50 L72,30 L100,30 L100,50 Z" />
+    <path android:fillColor="#3A4A5A"
+        android:pathData="M102,50 L102,30 L128,30 L142,50 Z" />
+
+    <!-- Wheel left arc path -->
+    <path android:fillColor="#1A1A22"
+        android:pathData="M45,88 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <path android:fillColor="#3A3A4A"
+        android:pathData="M45,88 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" />
+
+    <!-- Wheel right arc path -->
+    <path android:fillColor="#1A1A22"
+        android:pathData="M155,88 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <path android:fillColor="#3A3A4A"
+        android:pathData="M155,88 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" />
+
+    <!-- Gold accent line -->
+    <path android:fillColor="#C9A84C"
+        android:pathData="M15,68 L185,68 L185,71 L15,71 Z" />
+
+</vector>

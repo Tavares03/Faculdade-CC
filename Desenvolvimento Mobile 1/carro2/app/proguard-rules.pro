@@ -1,0 +1,1 @@
+-keep class com.example.carro2.data.entity.** { *; }
