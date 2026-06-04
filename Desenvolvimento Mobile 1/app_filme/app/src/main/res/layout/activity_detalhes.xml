@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Toolbar -->
+        <LinearLayout
+            android:id="@+id/toolbarDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/toolbar_bg"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:elevation="8dp">
+
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_btn_back"
+                android:src="@android:drawable/ic_media_previous"
+                android:contentDescription="Voltar"
+                android:padding="8dp"
+                android:tint="@color/text_primary"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Detalhes do Filme"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingStart="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Gêneros -->
+            <TextView
+                android:id="@+id/txtGeneros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_hint"
+                android:textSize="13sp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"/>
+
+            <!-- Linha: Nota + Classificação -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <!-- Badge Nota -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_rating_badge"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="★"
+                        android:textColor="@color/bg_dark"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/txtNota"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/bg_dark"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingStart="6dp"/>
+                </LinearLayout>
+
+                <!-- Badge Classificação -->
+                <TextView
+                    android:id="@+id/txtClassificacao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_classification_badge"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Sinopse -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SINOPSE"
+                android:textColor="@color/accent_gold"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/txtSinopse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Divisor -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Elenco -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ELENCO PRINCIPAL"
+                android:textColor="@color/accent_gold"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/txtElenco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.7"
+                android:layout_marginBottom="32dp"
+                android:text="Carregando..."/>
+
+            <!-- Botão Favoritar -->
+            <Button
+                android:id="@+id/btnFavoritar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="❤  Adicionar aos Favoritos"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_btn_favorite"
+                android:layout_marginBottom="12dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
